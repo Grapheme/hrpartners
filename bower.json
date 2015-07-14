@@ -1,0 +1,22 @@
+{
+  "name": "khrenov",
+  "version": "1.0.0",
+  "authors": [
+    "Igor Alekseev <mail@igoralekseev.info>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "~3.0.3",
+    "jquery": "~2.1.4"
+  },
+  "devDependencies": {
+    "chosen": "~1.4.2"
+  }
+}

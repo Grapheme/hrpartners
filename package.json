@@ -1,0 +1,25 @@
+{
+  "name": "khrenov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bower-main": "^0.2.14",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-ignore": "^1.2.1",
+    "gulp-jade": "^1.0.1",
+    "gulp-open": "^0.3.2",
+    "gulp-rev": "^5.1.0",
+    "gulp-sass": "^2.0.1",
+    "gulp-util": "^3.0.6",
+    "main-bower-files": "^2.9.0"
+  }
+}
