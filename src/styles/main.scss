@@ -14,12 +14,10 @@ html {
   font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 body {
 	// min-width: 1210px;
-  
 }
 
 .header {
@@ -108,11 +106,91 @@ body {
 
 
 .footer {
-  .form {
-    height: 600px;
-    border: 1px solid green;
+
+
+  .wrapper {
+    text-align: center;
+    margin-right: -320px;
+    
+    .icon {
+      display: inline-block;
+      width: 44px;
+      height: 60px;
+      background: url(../images/logo-grey.png) no-repeat center top;
+      border-bottom: 2px solid #c9c9c9
+    }
+
+    form {
+      display: inline-block;
+      // height: 600px;
+      width: 500px;
+      border: 1px solid green;
+
+      input[type="text"] {
+        width: 100%;
+        border: 2px solid #c9c9c9;
+      }
+
+      textarea {
+        width: 100%;
+        border: 2px solid #c9c9c9;
+      }
+
+      input[type="submit"] {
+        border: 2px solid #fff;
+        color: #fff;
+        background: #008ccf;
+        text-transform: uppercase;
+        padding: 6px 15px 3px;
+      }
+    }
+
+    .text p {
+      color: #b8b8b8;
+      text-transform: uppercase;
+      display: block;
+      padding: 20px 0 20px;
+    }
+
+    a.facebook, a.linkedin {
+      position: relative;
+      display: inline-block;
+      width: 55px;
+      height: 55px;
+      border-radius: 5px;
+      transform: rotate(-45deg);   
+
+      .logo {
+        display: block;
+        width: 55px;
+        height: 55px;
+        transform: rotate(45deg);
+      }
+    }
+
+    a.facebook {
+      z-index: 2;
+      background: #008ccf;
+      span {
+        background: url(../images/facebook.png) no-repeat 47% 45%;
+      }
+    }
+
+    a.linkedin {
+      z-index: 1;
+      background: #fff;
+      border: 1px solid #c5c5c5;
+      span {
+        background: url(../images/linkedin.png) no-repeat 55% 40%;
+      }
+    }
   }
 }
+
+
+
+
+// все об этих серых штуках на фоне
 
 .header, .block, .footer {
   position: relative;

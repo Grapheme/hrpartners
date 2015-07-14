@@ -74,7 +74,7 @@ gulp.task('watch', function() {
 	gulp.watch(app_path + '/views/**/*.jade', ['jade']);
 	gulp.watch(app_path + '/styles/**/*.scss', ['sass']);
 	gulp.watch(app_path + '/scripts/**/*.js', ['scripts']);
-	gulp.watch([app_path + '/fonts/**/*', app_path + '/images/**/*'], ['copy_static']);
+	gulp.watch([app_path + '/fonts/**', app_path + '/images/**'], ['copy_static']);
 });
 
 gulp.task('deploy', ['build'], function() {

@@ -25,8 +25,33 @@ block content
 
 	.footer
 		.content
-			div Follow us
-			.form
+
+			.wrapper
+				.icon
+				
+				.text
+					p Follow us
+					
+					a.facebook(href="#")
+						span.logo
+
+					a.linkedin(href="#")
+						span.logo
+					
+					p Email
+
+					a(href="mailto:info@yklaw.ru") info@yklaw.ru
+
+				form
+					input(type="text" placeholder="куда")
+					input(type="text" placeholder="тема письма")
+					.file прикрепить файл
+					textarea(placeholder="Сообщение")
+					input(type="submit" value="Submit")
+
+
+				.copy.
+					&copy; 2003&mdash;2015, Khrenov & Partners Law Office
 
 		.bg
 			.sq1
