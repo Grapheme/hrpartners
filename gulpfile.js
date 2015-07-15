@@ -1,6 +1,3 @@
-var project = {
-	open: false
-};
 
 var gulp = require('gulp');
 var connect = require('gulp-connect');
@@ -22,13 +19,9 @@ gulp.task('server', function() {
 		root: build_path,
 		livereload: true
 	});
+
 	gulp.src(build_path + '/index.html')
 		.pipe(open('', { url: 'http://localhost:' + port }));
-
-	if(project.open) {
-		gulp.src(project.open)
-			.pipe(open(''));
-	}
 });
 
 var js_files = bowerMain('js','min.js');
@@ -37,7 +30,7 @@ gulp.task('scripts', function() {
 	return gulp.src(js_files.minified.concat(app_path + '/scripts/*.js'))
 		.pipe(concat('main.concat.js'))
 		.pipe(gulp.dest(build_path + '/scripts/'))
-		.pipe(connect.reload())
+		.pipe(connect.reload());
 		// .pipe(rev.manifest())
 		// .pipe(gulp.dest(app_path));
 });
