@@ -67,7 +67,7 @@ body {
       transform: rotate(-45deg);
       border-radius: 30px;
       
-      margin-bottom: 450px + $sq-padding;
+      margin-bottom: 380px + $sq-padding;
       margin-right: 310px;
       overflow: hidden;
 
@@ -105,11 +105,59 @@ body {
 }
 
 
+a.pdf__square {
+  display: block;
+  font-size: 14px;
+  font-family: 'Arial Bold', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+  width: 130px;
+  text-align: center;
+  position: relative;
+  padding: 0 0 25px;
+
+  .icon {
+    display: block;
+    border: 1px solid #0085CA;
+    border-radius: 4px;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    margin: 0 auto 30px;
+
+    i {
+      transform: rotate(45deg);
+      display: block;
+      height: 100%;
+      background: url(../images/pdf.png) no-repeat center center
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 36px;
+    height: 4px;
+    background: #008AD2;
+    left: 50%;
+    bottom: 0;
+    margin-left: -18px;
+  }
+}
+
 body.about {
   .bg .sq1 .img {
     background: url(../images/columns-big.jpg) no-repeat bottom right;        
     bottom: -320px;
     left: -320px;
+  }
+
+  .block a.pdf__square {
+    margin: 70px 0 0 260px;
   }
 }
 
@@ -336,6 +384,10 @@ body.about {
       a {
         text-decoration: none;
         color: #b8b8b8;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
