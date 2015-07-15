@@ -172,6 +172,12 @@ body.about {
     height: 60px;
     background: #fff url(../images/logo.png) no-repeat center center;
     float: left;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .menu {
