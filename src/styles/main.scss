@@ -38,10 +38,8 @@ body {
 }
 
 
-
 // все об этих серых штуках на фоне
 .bg {
-  z-index: 1;
   position: relative;
 
   .wrapper {
@@ -200,9 +198,34 @@ body.about {
 }
 
 .block {
-  
   .content {
     min-height: 600px;
+
+    h1 {
+      font-weight: normal;
+      font-size: 125px;
+      font-family: 'itc_avant_garde_gothicXLt';
+      text-align: center;
+      color: #eaeaea;
+
+      margin: 70px 0 65px;
+      text-transform: uppercase;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 92px;
+        height: 4px;
+        background: #008AD2;
+        
+        left: 50%;
+        bottom: -15px;
+
+        margin-left: -46px;
+      }
+    }
   }
 }
 
@@ -210,6 +233,7 @@ body.about {
 .footer {
   color: #b8b8b8;
   font-size: 12px;
+  z-index: 1;
   
   .content {
     text-align: center;
