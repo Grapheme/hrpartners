@@ -1,7 +1,9 @@
 doctype html
 - var title = 'Khrenov&Partners'
+- var bodyClass = ''
 
 block vars 
+
     
 html.no-js(lang="")
   head
@@ -9,8 +11,23 @@ html.no-js(lang="")
     meta(name="description", content="")
     title #{title}
     link(rel="stylesheet", href="styles/main.css")
-  body
+  body(class="#{ bodyClass }")
+    include _header.jade
+
     block content
-    
-    script(src="scripts/main.concat.js?1")
+
+    include _footer.jade
+
+    script(src="scripts/main.concat.js?1")      
+    script.
+      $('.menu li')
+        .removeClass('active')
+        .each(function() {
+          var i = $(this);
+          if (location.pathname.indexOf(i.find('a').attr('href')) > -1) {
+            i.addClass('active')
+            return false;
+          }
+        })
+
     block scripts
