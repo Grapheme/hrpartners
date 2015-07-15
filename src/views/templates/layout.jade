@@ -1,8 +1,8 @@
 doctype html
-- var title = 'Khrenov&Partners'
-- var bodyClass = ''
 
 block vars 
+  - var title = 'Khrenov&Partners'
+  - var bodyClass = ''
 
     
 html.no-js(lang="")
@@ -17,7 +17,7 @@ html.no-js(lang="")
     block content
 
     include _footer.jade
-
+    
     script(src="scripts/main.concat.js?1")      
     script.
       $('.menu li')
