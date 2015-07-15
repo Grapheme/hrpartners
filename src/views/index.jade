@@ -7,18 +7,30 @@ block content
 		.content
 			.logo
 			.menu
-				a.menu__item.active(href="#") About us
-				a.menu__item(href="#") Our team
-				a.menu__item(href="#") Services
-				a.menu__item(href="#") Clients
-				a.menu__item(href="#") Recognition
-				a.menu__item(href="#") Press-club
-				a.menu__item(href="#") Career
-				a.menu__item(href="#") Contacts
+				ul
+					li.active
+						a(href="#") About us
+					li
+						a(href="#") Our team
+					li
+						a(href="#") Services
+					li
+						a(href="#") Clients
+					li
+						a(href="#") Recognition
+					li
+						a(href="#") Press-club
+					li
+						a(href="#") Career
+					li
+						a(href="#") Contacts
 
 			.lang
-				a.lang__item(href="#") Ru
-				a.lang__item(href="#") En
+				ul
+					li 
+						a(href="#") Ru
+					li
+						a(href="#") En
 
 	.block
 		.content
@@ -64,10 +76,10 @@ block content
 block scripts
 	script.
 		(function() {
-			var links = $('.menu a')
-			links.click(function(e) { 
-				links.removeClass('active');
-				$(e.target).addClass('active');
+			var menu = $('.menu')
+			menu.find('a').click(function(e) { 
+				menu.find('li').removeClass('active');
+				$(e.target).closest('li').addClass('active');
 			})
 		})();
 		

@@ -40,60 +40,66 @@ body {
     float: right
   }
 
-  .menu .menu__item, .lang .lang__item {
-    display: block;
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    margin: 0 5px;
-    padding: 0 5px;
+  .menu, .lang {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
-    font-size: 13px;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: none;
-    position: relative;
+      li { 
+        height: 60px;
+        float: left;
+        position: relative;
 
-    &:hover {
-      text-decoration: underline;
-    }
+        a {
+          display: block;
+          line-height: 60px;
+          margin: 0 5px;
+          padding: 0 5px;
 
-    &.active::before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #fff;
-      transform: rotate(-45deg);
-      margin-top: -5px;
-      margin-left: -5px;
-      left: 50%;
-    }
+          font-size: 13px;
+          text-transform: uppercase;
+          color: #fff;
+          text-decoration: none;
+        }
 
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: #fff;
-      transform: rotate(-45deg);
-      right: 0;
-      top: 50%;
-      margin-top: -2px;
-      margin-right: -7px;
-    }
+        &.active::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background: #fff;
+          transform: rotate(-45deg);
+          margin-top: -5px;
+          margin-left: -5px;
+          left: 50%;
+        }
 
-    &:last-child::after {
-      display: none;
+        &:hover a {
+          text-decoration: underline;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          background: #fff;
+          transform: rotate(-45deg);
+          right: 0;
+          top: 50%;
+          margin-top: -2px;
+          margin-right: -2px;
+        }
+
+        &:last-child::after {
+          display: none;
+        }
+      }
     }
   }
-
-  .menu .menu__item {}
-  .lang .lang__item {}
-
-
 }
 
 .block {
@@ -125,6 +131,10 @@ body {
       // height: 600px;
       width: 500px;
       border: 1px solid green;
+
+      input, textarea {
+        box-sizing: border-box;
+      }
 
       input[type="text"] {
         width: 100%;
