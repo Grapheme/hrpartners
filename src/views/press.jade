@@ -6,6 +6,58 @@ block vars
 block content
   .block
     .content
+      h1 Press-center
+
+      .menu
+        ul
+          li
+            a(href="#") News
+
+          li
+            a(href="#") Comments in media
+
+          li
+            a(href="#") Publications
+          
+          li
+            a(href="#") Press-service contacts
+
+      
+      .news
+        - var news = 0
+        while news < 5
+          - news++
+          .item
+            .image
+            .date
+              span.day 14 
+              span.month July
+              |, 
+              span.year 2015
+
+            .text
+              h4 
+                a(href="#")
+                  span.title «Khrenov & Partners» nominated for
+                  span.category / press-service contacts
+
+              p Special representatives of "Khrenov and Partners" take part in the prestigious annual Russian-Spanish Legal Conference at the Embassy of Spain in Moscow
+
+
+      .calendar
+        .month
+          a.prev(href="#")
+          | july
+          a.next(href="#")
+
+        .days
+          - var days = 0
+          while days < 5
+            - days++
+
+
+
+
 
 block scripts
 

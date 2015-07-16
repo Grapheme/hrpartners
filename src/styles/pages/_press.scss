@@ -1,0 +1,106 @@
+body.press {
+
+
+  .block .content {
+    .menu {
+      background: #f4f3f3;
+      padding: 30px;
+
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        margin: 0 auto;
+        width: auto;
+        display: table;
+      }
+
+      li {
+        text-align: center;
+        display: table-cell;
+        border-right: 2px solid #008ccf;
+        padding: 5px 40px;
+
+        a {
+          display: block;
+          height: 100%;
+          color: #000;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: 'Arial Bold', sans-serif;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        &.active a, a:hover {
+          color: #008ccf;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+          border: 0;
+        }
+      } 
+    }
+
+    .news {
+      .item {
+        .date {
+          color: #797979;
+          font-size: 12px;
+
+          .day {
+            color: #008ccf;
+            font-size: 30px;
+          }
+        }
+
+        .image {}
+
+        .text {
+          h4 {
+            a {
+              text-decoration: none;
+              color: #000;            
+            }
+
+            .title {
+              &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&amp;0+0,1+100 */
+                background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+                background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 */
+              }
+
+              &:hover {
+                color: #008ccf;
+              }
+            }
+
+            .category {
+              color: #c1c1c1;
+            }
+          }
+
+          p {
+            font-size: 12px;
+            color: #797979
+          }
+        }
+      }
+    }
+  }
+}
