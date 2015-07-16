@@ -1,0 +1,63 @@
+body.services {
+  .block {
+    .content {
+      .menu {
+        float: left;  
+        width: 400px;
+
+        ul {
+          list-style: none;
+          li {
+            float: left;
+            width: 180px;
+            height: 200px;
+            text-align: center;
+
+            a {
+              display: inline-block;
+            }
+
+            &.center {
+              width: 360px;
+            }
+
+            a.img1 i {
+              background-image: url(../images/services/1s.jpg);
+            }
+            a.img2 i {
+              background-image: url(../images/services/2s.jpg);
+            }
+            a.img3 i {
+              background-image: url(../images/services/3s.jpg);
+            }
+            a.img4 i {
+              background-image: url(../images/services/4s.jpg);
+            }
+            a.img5 i {
+              background-image: url(../images/services/5s.jpg);
+            }
+            a.img6 i {
+              background-image: url(../images/services/6s.jpg);
+            }
+            a.img7 i {
+              background-image: url(../images/services/7s.jpg);
+            }
+            a.img8 i {
+              background-image: url(../images/services/8s.jpg);
+            }
+            a.img9 i {
+              background-image: url(../images/services/9s.jpg);
+            }
+          }
+        }
+      }
+
+      .page {
+        float: right;
+        width: 560px;
+      }
+      @extend .clearfix;
+    }
+
+  }
+}

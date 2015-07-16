@@ -1,0 +1,220 @@
+body.team {
+  .block {
+    .content {
+      .col {
+        width: 512px;
+      }
+
+      .managers {
+        float: left;
+
+        ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        h2 {
+          text-align: left;
+        }
+
+        .slide {
+          padding-top: 10px;
+        }
+
+        .bx-wrapper {
+          position: relative;
+
+          .bx-pager {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -26px; 
+
+            .bx-pager-item {
+              float: left;
+              width: 20px;
+
+              a {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                border: 1px solid #d6d6d6;
+                text-indent: -9000px;
+                transform: rotate(-45deg);
+                border-radius: 4px;
+
+                &.active {
+                  background: #008ccf;
+                  border: 1px solid #2fa1d8
+                }
+              }
+            }
+          }
+        }
+
+        .item {
+          float: left;
+          width: 256px;
+          padding-top: 30px;
+          padding-bottom: 20px;
+          // height: 266px;
+
+          .rotated {
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+
+            .img {
+              width: 180px;
+              height: 180px;
+              margin-bottom: 60px;
+
+              i {
+                width: 250px;
+                height: 250px;
+                $i: 30px; 
+                margin-left: -$i;
+                margin-top: -$i;
+              }
+            }
+          }
+        }
+      }
+
+      .team {
+        float: right;
+        text-align: right;
+
+        .search {
+          position: relative;
+          width: 160px;
+          float: right;
+          margin-bottom: 30px;
+
+          input {
+            background: url(../images/search.png) no-repeat 5px center;
+            font-size: 14px;
+            padding: 6px 2px 6px 2px;
+            border: 0;
+            text-align: right;
+            width: 100%;
+            outline: 0;
+          }
+
+          .close {
+            display: none;
+            position: absolute;
+            right: -25px;
+            top: 4px;
+          }
+        }
+
+        h2 {
+          
+        } 
+
+        .persons {
+          clear: both;
+
+          .item {
+            .name {
+              text-transform: uppercase;
+              font-family: 'Arial Bold', sans-serif;
+              font-weight: bold;
+              font-size: 14px;
+
+              display: inline-block;
+              cursor: pointer;
+              &:hover {
+                color: #008AD2;
+              }
+            }
+
+            .more {
+              display: none;
+              background: #f4f3f3;
+              padding: 30px;
+              text-align: left;
+              width: 400px;
+              float: right;
+              margin: 50px 0 30px;
+              position: relative;
+
+              &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 0;
+                border-style: solid;
+                border-width: 0 30px 30px 30px;
+                border-color: transparent transparent #f4f3f3 transparent;
+
+                top: -30px;
+                right: 80px;
+              }
+
+              .close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+              }
+
+              .photo {
+                float: right;
+                margin: 30px 15px 0 0;
+
+                .img {
+                  width: 125px;
+                  height: 125px;
+                  margin-bottom: 60px;
+
+                  i {
+                    width: 180px;
+                    height: 180px;
+                    $i: 25px; 
+                    margin-left: -$i;
+                    margin-top: -$i;
+                  }
+                }
+              }
+            }
+
+            .about {
+              width: 220px;
+
+              h6 {
+                margin: 0;
+                color: #797979;
+                font-size: 13px;
+                font-weight: normal;
+                position: relative;
+                padding-top: 20px;
+
+                &::before {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  width: 36px;
+                  height: 2px;
+                  background: #008AD2;
+                  left: 0;
+                  top: 0;
+                  // margin-left: -18px;
+                }
+              }
+
+              p {
+                font-size: 15px;
+                line-height: 1.4em;
+                
+              }
+            }
+
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+}

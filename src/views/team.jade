@@ -6,7 +6,113 @@ block vars
 block content
   .block
     .content
+      h1 Our team
 
-block scripts
+      .col.managers
+        h2 Руководители<br>рабочих<br>групп
+
+        .slides
+          - var slides = 0
+          while slides < 3
+            - slides++
+
+            .slide
+              - var managers = 0
+              while managers < 8
+                - managers++
+                .item
+                  .rotated
+                    .img
+                      i(style="background-image: url(../images/person.jpg);")
+                    | Petr Ivanov
+
+      .col.team
+        h2 Вся<br>команда
+
+        .search
+          input(type="text" placeholder="SEARCH FOR TEAM") 
+          .close
+
+        .persons
+          - var persons = 0
+          while persons < 8
+            - persons++
+          
+            .item
+              .name Ирина Серова 
+              .more
+                .close
+
+                .photo
+                  .rotated
+                    .img
+                      i(style="background-image: url(../images/person_s.jpg);")
+
+                .about
+                  h6 Law
+
+                  p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.
+                  p Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. 
+                  p Temporibus autem quibusdam et aut officiis debitis aut necessitatibus saepe eveniet ut et voluptates.
+
+            .item
+              .name Петр Машошин
+              .more
+                .close
+                .photo
+                .about
+
+            .item
+              .name Станислав Вивчарь 
+              .more
+                .close
+                .photo
+                .about
+
+            .item
+              .name Константин Макотченко 
+              .more
+                .close
+                .photo
+                .about
+
+            .item
+              .name Дмитрий Нарожный
+              .more
+                .close
+                .photo
+                .about
+
+
+block append scripts
+  script.
+    $('.col.team .persons .item .name').add('.col.team .persons .item .close').click(function(e) {
+      $(e.target).closest('.item').find('.more').slideToggle();
+    });
+
+    var lastValue = '';
+    $('.col.team .search input').on('keyup change', function(e) {
+      var value = $(e.target).val().replace(/\s/g,'').toLowerCase();
+      if (value === lastValue) return;
+      lastValue = value;
+
+      $('.col.team .search .close').toggle(Boolean(value));
+
+      $('.col.team .persons .item').each(function() {
+        var item = $(this);
+        var name = item.find('.name').text().replace(/\s/g,'').toLowerCase();
+        item.toggle(name.indexOf(value) > -1);
+      })
+    });
+
+    $('.col.team .search .close').click(function(){
+      $('.col.team .search input').val('').change();
+    });
+
+
+    $('.col.managers .slides').bxSlider({
+      controls: false
+    });
+
 
     

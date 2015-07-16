@@ -25,6 +25,8 @@ gulp.task('server', function() {
 });
 
 var js_files = bowerMain('js','min.js');
+console.log('main bower files [minified]:');
+console.log(js_files.minified);
 
 gulp.task('scripts', function() {
 	return gulp.src(js_files.minified.concat(app_path + '/scripts/*.js'))

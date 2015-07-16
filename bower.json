@@ -14,9 +14,7 @@
   ],
   "dependencies": {
     "normalize-scss": "~3.0.3",
-    "jquery": "~2.1.4"
-  },
-  "devDependencies": {
-    "chosen": "~1.4.2"
+    "jquery": "~2.1.4",
+    "bxslider-4": "stevenwanderski/bxslider-4#~4.2.5"
   }
 }

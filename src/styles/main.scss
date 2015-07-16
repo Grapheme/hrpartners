@@ -22,8 +22,6 @@ body {
 }
 
 
-
-
 .header, .block, .footer {
   position: relative;
   z-index: 2;
@@ -32,9 +30,7 @@ body {
     position: relative;
     z-index: 3;
     max-width: 1024px;
-    margin: 0 auto; 
-
-
+    margin: 0 auto;
   }
 }
 
@@ -108,7 +104,7 @@ body {
   }
 }
 
-a.with__img {
+.rotated {
   display: block;
   font-size: 14px;
   font-family: 'Arial Bold', sans-serif;
@@ -141,23 +137,12 @@ a.with__img {
       $i: 15px;
       margin-left: -$i;
       margin-top: -$i;
+
+      background-position: center center;
+      background-repeat: no-repeat;
     }
   }
 
-  &:hover, &.active {
-    color: #008AD2;
-  }
-
-
-  &.pdf {
-    .img {
-      border: 1px solid #0085CA;
-
-      i {
-        background: url(../images/pdf.png) no-repeat center center;
-      }
-    }
-  }
 
   &.with__line::after {
     content: '';
@@ -172,8 +157,28 @@ a.with__img {
   }
 }
 
+a {
+  &:hover, &.active {
+    color: #008AD2;
+  }
+}
 
-  
+a.pdf.rotated {
+  .img {
+    border: 1px solid #0085CA;
+
+    i {
+      background-image: url(../images/pdf.png);
+    }
+  }
+}
+
+.close {
+  background: url(../images/close.png) no-repeat center center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
 
 
 .header {
@@ -297,6 +302,16 @@ a.with__img {
       }
     }
 
+    h2 {
+      font-weight: normal;
+      font-size: 70px;
+      font-family: 'itc_avant_garde_gothicXLt';
+      color: #e9e9e9;
+      text-transform: uppercase;
+      line-height: 0.9em;
+      margin: 30px 0;
+    }
+
     h4 {
       font-size: 14px;
       font-family: 'Arial Bold', sans-serif;
@@ -312,6 +327,9 @@ a.with__img {
     }
   }
 }
+
+
+
 
 
 .footer {
@@ -484,7 +502,10 @@ a.with__img {
   }
 }
 
-@import 'page_specific';
+@import 'pages/about';
+@import 'pages/services';
+@import 'pages/team';
+
 
 
 
