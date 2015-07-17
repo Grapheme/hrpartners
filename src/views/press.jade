@@ -28,7 +28,10 @@ block content
         while news < 5
           - news++
           .item
-            .image
+            .image.rotated
+              .img
+                i(style="background-image: url(../images/news/1.jpg);")
+
             .date
               span.day 14 
               span.month July
@@ -37,28 +40,88 @@ block content
 
             .text
               h4 
-                a(href="#")
-                  span.title «Khrenov & Partners» nominated for
-                  span.category / press-service contacts
+                a(href="news_item.html").title «Khrenov & Partners» nominated
+                span.category / press-service contacts
 
               p Special representatives of "Khrenov and Partners" take part in the prestigious annual Russian-Spanish Legal Conference at the Embassy of Spain in Moscow
+
+          .item
+            .image.rotated
+              .img
+                i(style="background-image: url(../images/news/1.jpg);")
+
+            .date
+              span.day 7
+              span.month December
+              |, 
+              span.year 2014
+
+            .text
+              h4 
+                a(href="news_item.html").title Special representatives
+                span.category / publications in russia
+              p Special representatives of "Khrenov and Partners" take part in the prestigious annual Russian-Spanish Legal Conference at the Embassy of Spain in Moscow
+
+
+          .item
+            .image.rotated
+              .img
+                i(style="background-image: url(../images/news/1.jpg);")
+
+            .date
+              span.day 11
+              span.month November
+              |, 
+              span.year 2014
+
+            .text
+              h4 
+                a.title(href="news_item.html") Best Legal Departments 2014 
+                span.category / news
+              p Special representatives of "Khrenov and Partners" take part in the prestigious annual Russian-Spanish Legal Conference at the Embassy of Spain in Moscow
+
+
+        button.more More
+
 
 
       .calendar
         .month
-          a.prev(href="#")
-          | july
-          a.next(href="#")
+          a.prev(href="#") 
+          span july
+          // disabled arrow
+          span.next(href="#") 
+        .cal
+          - var today = Math.ceil(Math.random() * 31)
+          - var selected = Math.ceil(Math.random() * 31)
+          - var weekdays = 'mo tu we th fr sa su'.split(' ')
+          - var first_weekday = weekdays[Math.ceil(Math.random() * 6)]
+          
+          - var d = 1
+          while d <= 31
+            a(href="##{d}").day(class="#{ d == today ? 'today' : ''}#{ d == selected ? 'selected' : ''}#{ d == 1 ? first_weekday : '' }")
+              = d++
 
-        .days
-          - var days = 0
-          while days < 5
-            - days++
+          .years
+            .current 
+              span.y 2015
+              .arrow
 
-
-
+            .select
+              - var y = 2014
+              while y > 2006
+                a.year(href="##{y}")= y--
 
 
 block scripts
+  script.
+    $('.calendar .years .current').click(function(e) {
+      $(e.target).closest('.years').toggleClass('opened');
+    });
+
+    $('.calendar .years .current').mouseenter(function(e) {
+      $(e.target).closest('.years').addClass('opened');
+    });
+
 
     

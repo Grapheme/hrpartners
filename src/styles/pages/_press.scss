@@ -28,10 +28,7 @@ body.press {
           height: 100%;
           color: #000;
           text-decoration: none;
-          text-transform: uppercase;
-          font-family: 'Arial Bold', sans-serif;
-          font-weight: bold;
-          font-size: 14px;
+          @include arial-bold-up;
         }
 
         &.active a, a:hover {
@@ -50,39 +47,84 @@ body.press {
     }
 
     .news {
+      float: left;
+      width: 605px;
+
+
       .item {
+        padding: 40px 0 40px 125px;
+        border-bottom: 1px solid #e3e3e3;
+        position: relative;
+
         .date {
           color: #797979;
           font-size: 12px;
+          position: relative;
+          padding-bottom: 20px;
 
           .day {
             color: #008ccf;
             font-size: 30px;
+            display: block;
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 36px;
+            height: 2px;
+            background: #008ccf;
+
           }
         }
 
-        .image {}
+        .image {
+          position: absolute;
+          left: -10px;
+          top: 50px;
+        }
 
         .text {
+
+
           h4 {
+            margin: 16px 0 10px;
+
             a {
               text-decoration: none;
               color: #000;            
             }
 
             .title {
+              padding-right: 0em;
+              margin-right: 5px;
+              position: relative;
+              display: inline-block;
+              max-width: 310px;
+              white-space: nowrap;
+              // overflow: hidden;
+
               &:after {
                 content: '';
                 display: block;
                 position: absolute;
                 right: 0;
+                top: 0;
+
+                // background: red;
+                width: 15px;
+                height: 100%;
 
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&amp;0+0,1+100 */
-                background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-                background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-                background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
-                background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 */
+                // background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+                // background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+                // background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+                // background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+                // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 */
               }
 
               &:hover {
@@ -97,7 +139,194 @@ body.press {
 
           p {
             font-size: 12px;
-            color: #797979
+            color: #797979;
+
+            a {
+              color: #008ccf;
+            }
+          }
+        }
+      }
+
+      button.more {
+        // display: block;
+        width: 100%;
+        border: 0;
+        background: #f4f3f3;
+        color: #c1c1c1;
+        text-transform: uppercase;
+        padding: 15px;
+        @include arial-bold-up;
+        outline: none;
+      }
+    }
+
+    .calendar {
+      float: right;
+      @include arial-bold;
+      user-select: none;
+
+      .month {
+        color: #008ccf;
+        text-transform: uppercase;
+        float: right;
+        margin: 25px 0 10px;
+
+        span {
+          display: inline-block;
+          height: 20px;
+          vertical-align: middle;
+        }
+
+        .prev, .next {
+          vertical-align: middle;
+          text-decoration: none;
+          display: inline-block;
+          padding: 5px 10px;
+          position: relative;
+          height: 20px;
+          
+
+          &::after {
+            content: '';
+            display: block;
+            border: 2px solid #008ccf; 
+            width: 6px;
+            height: 6px;
+            top: 50%;
+            margin-top: -6px;
+            position: absolute;
+            transform: rotate(45deg);
+          }
+        }
+
+        span.prev, span.next {
+           &::after {
+            border-color: #c1c1c1;
+          }
+        }
+
+        .prev{
+          margin-right: 10px;
+
+          &::after {
+            border-top: 0;
+            border-right: 0; 
+            left: 50%;
+            margin-left: -2px;
+          }
+        }
+
+        .next {
+          margin-left: 10px;
+
+          &::after {
+            border-bottom: 0;
+            border-left: 0;
+            right: 50%;
+            margin-right: -2px;
+          }
+        }
+      }
+
+      .cal {
+        // border: 1px solid #e3e3e3;
+        padding: 0 0 0 0; 
+        $day: 55px;
+        $border: 1px; 
+        width: ($day + $border) * 7;
+        clear: both;
+
+        a {
+          color: #c5c5c5;
+          text-decoration: none;
+
+          &:hover {
+            color: #fff;
+            background: #008ccf;
+          }
+        }
+
+        .years, .year, .day {
+          float: left;
+          width: $day;
+          height: $day;
+          line-height: $day;
+          text-align: center;
+          border: $border solid #e3e3e3;
+          margin: -$border 0 0 (-$border);
+          display: block;
+        }
+
+        .day {
+          color: #c5c5c5;
+
+          &.today {
+            background: #f4f3f3;
+          }
+
+          &.selected {
+            background: #008ccf;
+            color: #fff;
+          }
+
+          &.mo { margin-left: 0; }
+          &.tu { margin-left: ($day + $border) * 1 - $border; }
+          &.we { margin-left: ($day + $border) * 2 - $border; }
+          &.th { margin-left: ($day + $border) * 3 - $border; }
+          &.fr { margin-left: ($day + $border) * 4 - $border; }
+          &.sa { margin-left: ($day + $border) * 5 - $border; }
+          &.su { margin-left: ($day + $border) * 6 - $border; }
+        }
+
+        .years {
+          background: #008ccf;
+          color: #fff;
+          
+          .current {
+            color: #fff;
+            // padding-bottom: 20px;
+            // line-height: auto;
+            position: relative;
+
+            .y {
+              position: relative;
+              top: -5px;
+            }
+
+             &::after {
+              content: '';
+              display: block;
+              border: 2px solid #fff; 
+              border-bottom: 0;
+              border-left: 0;
+              width: 6px;
+              height: 6px;
+
+              position: absolute;
+              bottom: 10px;
+              left: 50%;
+              margin-left: -3px;
+              
+              transform: rotate(135deg);
+            } 
+          }
+
+          .select {
+            display: none;
+            color: #c5c5c5;
+            width: ($day + $border) * 2;
+            margin-top: $border;
+            margin-left: - ($day + $border);
+          }
+
+          &.opened {
+            .current::after {
+              transform: rotate(-45deg);
+            }
+            .select {
+              display: block;            
+            }
           }
         }
       }

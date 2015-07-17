@@ -5,13 +5,34 @@
 @import 'fonts';
 @import 'clearfix';
 
+@mixin arial ($size: 14px) {
+  font: {
+    size: $size;
+    family: Arial, Helvetica, sans-serif;
+  }
+}
+
+@mixin arial-bold($size: 14px) {
+  font: {
+    size: $size;
+    family: 'Arial Bold', sans-serif;
+    weight: bold;
+  }
+}
+
+@mixin arial-bold-up($size: 14px) {
+  @include arial-bold($size);
+  text-transform: uppercase;
+}
+
+
 html, body {
   min-height: 100% !important;
   height: 100%;
 }
 
 html {
-	font-family: Arial, Helvetica, sans-serif;
+	@include arial;
   font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,7 +41,6 @@ html {
 body {
 	// min-width: 1210px;
 }
-
 
 .header, .block, .footer {
   position: relative;
@@ -105,13 +125,10 @@ body {
 }
 
 .rotated {
+  @include arial-bold-up;
   display: block;
-  font-size: 14px;
-  font-family: 'Arial Bold', sans-serif;
-  font-weight: 700;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
   color: #000;
   width: 130px;
   position: relative;
@@ -313,17 +330,12 @@ a.pdf.rotated {
     }
 
     h4 {
-      font-size: 14px;
-      font-family: 'Arial Bold', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
+      @include arial-bold-up;
     }
 
     h5 {
       margin-bottom: -.9em;
-      font-size: 15px;
-      font-family: 'Arial Bold', sans-serif;
-      font-weight: bold;
+      @include arial-bold(15px);
     }
   }
 }
@@ -360,9 +372,7 @@ a.pdf.rotated {
       input, textarea, .file {
         box-sizing: border-box;
         outline: none;
-        font-size: 11px;
-        font-family: 'Arial Bold', sans-serif;
-        font-weight: 700;
+        @include arial-bold(11px);
         border: 2px solid #c9c9c9;
         background: #fff;
         width: 100%;
@@ -389,9 +399,7 @@ a.pdf.rotated {
         padding: 10px 25px 9px;
         width: auto;
         margin: 0px 0 12px;
-        font-size: 14px;
-        font-family: 'Arial Bold', sans-serif;
-        font-weight: 700;
+        @include arial-bold;
       }
 
       .file {
@@ -431,9 +439,7 @@ a.pdf.rotated {
         text-transform: uppercase;
         display: block;
         margin: 20px 0 10px;
-        font-size: 10px;
-        font-family: 'Arial Bold', sans-serif;
-        font-weight: 700;
+        @include arial-bold(10px);
         letter-spacing: 2px;
       }
 
