@@ -1,4 +1,3 @@
-
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
@@ -9,6 +8,7 @@ var concat = require('gulp-concat');
 var prefix = require('gulp-autoprefixer');
 var bowerMain = require('bower-main');
 // var rev = require('gulp-rev');
+var plumber = require('gulp-plumber');
 	
 var build_path = './build';
 var app_path = './src';
@@ -39,6 +39,7 @@ gulp.task('scripts', function() {
 
 gulp.task('jade', function() {
 	gulp.src(app_path + '/views/*.jade')
+		.pipe(plumber())
 		.pipe(jade({
 			locals: {
 				// hahaha: true
