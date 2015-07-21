@@ -1,3 +1,32 @@
+.service-item.img1 i {
+  background-image: url(../images/services/1s.jpg);
+}
+.service-item.img2 i {
+  background-image: url(../images/services/2s.jpg);
+}
+.service-item.img3 i {
+  background-image: url(../images/services/3s.jpg);
+}
+.service-item.img4 i {
+  background-image: url(../images/services/4s.jpg);
+}
+.service-item.img5 i {
+  background-image: url(../images/services/5s.jpg);
+}
+.service-item.img6 i {
+  background-image: url(../images/services/6s.jpg);
+}
+.service-item.img7 i {
+  background-image: url(../images/services/7s.jpg);
+}
+.service-item.img8 i {
+  background-image: url(../images/services/8s.jpg);
+}
+.service-item.img9 i {
+  background-image: url(../images/services/9s.jpg);
+}
+
+
 body.services {
   .block {
     .content {
@@ -19,34 +48,6 @@ body.services {
 
             &.center {
               width: 360px;
-            }
-
-            a.img1 i {
-              background-image: url(../images/services/1s.jpg);
-            }
-            a.img2 i {
-              background-image: url(../images/services/2s.jpg);
-            }
-            a.img3 i {
-              background-image: url(../images/services/3s.jpg);
-            }
-            a.img4 i {
-              background-image: url(../images/services/4s.jpg);
-            }
-            a.img5 i {
-              background-image: url(../images/services/5s.jpg);
-            }
-            a.img6 i {
-              background-image: url(../images/services/6s.jpg);
-            }
-            a.img7 i {
-              background-image: url(../images/services/7s.jpg);
-            }
-            a.img8 i {
-              background-image: url(../images/services/8s.jpg);
-            }
-            a.img9 i {
-              background-image: url(../images/services/9s.jpg);
             }
           }
         }

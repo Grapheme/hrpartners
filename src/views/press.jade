@@ -99,7 +99,7 @@ block content
           
           - var d = 1
           while d <= 31
-            a(href="##{d}").day(class="#{ d == today ? 'today' : ''}#{ d == selected ? 'selected' : ''}#{ d == 1 ? first_weekday : '' }")
+            a.day(href="##{d}" class="#{ d == today ? 'today' : ''}#{ d == selected ? 'selected' : ''}#{ d == 1 ? first_weekday : '' }")
               = d++
 
           .years

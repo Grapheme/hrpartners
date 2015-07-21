@@ -4,12 +4,15 @@
 
 @import 'fonts';
 @import 'clearfix';
+@import 'grayscale';
 
 @mixin arial ($size: 14px) {
   font: {
     size: $size;
     family: Arial, Helvetica, sans-serif;
+    weight: normal;
   }
+  text-transform: none;
 }
 
 @mixin arial-bold($size: 14px) {
@@ -55,8 +58,8 @@ body {
 }
 
 
-// все об этих серых штуках на фоне
-.bg {
+// все об этих серых штуках на фоне внизу, под формой
+.footer .bg {
   position: relative;
 
   .wrapper {
@@ -161,16 +164,16 @@ body {
   }
 
 
-  &.with__line::after {
+  &.with-line::after {
     content: '';
     display: block;
     position: absolute;
     width: 36px;
     height: 4px;
+    margin-left: -18px;
     background: #008AD2;
     left: 50%;
     bottom: 0;
-    margin-left: -18px;
   }
 }
 
@@ -290,7 +293,7 @@ a.pdf.rotated {
   // margin: 0 0 60px;
 
   .content {
-    min-height: 600px;
+    // min-height: 600px;
     // padding: 0 0 40px;
 
     h1 {
@@ -512,6 +515,7 @@ a.pdf.rotated {
 @import 'pages/services';
 @import 'pages/team';
 @import 'pages/press';
+@import 'pages/index';
 
 
 

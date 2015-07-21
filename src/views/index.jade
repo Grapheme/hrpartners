@@ -1,11 +1,257 @@
 extends templates/layout
 
 block vars
+	- var bodyClass = 'index'
+
 
 block content
-	.block
-		.content
+	.about.block
+		.bg.rotated
+			.img
+				i(style="background-image: url(../images/bg1.jpg);")
+				.s1
+				.s2
 
+		.content 
+			.logo
+			h1 About us
+				.small &laquo;Khrenov and Partners&raquo;
+
+			p.
+				The firm draws on the collective experience of 50 lawyers from across its network of 
+				<br>
+				offices from Moscow to St. Petersburg, Krasnodar and Ekaterinburg, 
+				<br>
+				providing a comprehensive range of legal services 
+				<br>
+				to domestic and international clients.
+
+			a(href="about.html").tr-button.big Read more
+
+
+	.team.block
+		.content
+			h1 Our team
+			p.
+				Click through our Employee to learn more about our team 
+				<br>
+				and what motivates them.
+
+			a(href="team.html").all-team.tr-button All team
+
+			.partners
+				a(href="#").item.left.rotated.with-line
+					.img
+						i(style="background-image: url(../images/team/1.jpg);")
+					| Александр Хренов
+					.status партнер
+
+				a(href="#").item.right.rotated.with-line
+					.img
+						i(style="background-image: url(../images/team/2.jpg);")
+					| Игорь Николаенко
+					.status партнер
+
+				a(href="#").item.center.rotated.with-line
+					.img
+						i(style="background-image: url(../images/team/3.jpg);")
+					| Ольга Гончарова
+					.status партнер
+
+				a(href="#").item.left.rotated.with-line
+					.img
+						i(style="background-image: url(../images/team/4.jpg);")
+					| Евгений Колпаков
+					.status партнер
+
+				a(href="#").item.right.rotated.with-line
+					.img
+						i(style="background-image: url(../images/team/1.jpg);")
+					| Александр Коньков
+					.status партнер
+
+	.contacts.block
+		.bg.rotated
+			.img
+		.content
+			h1 Contacts
+		.row
+			.city.msk 
+				.pin.rotated
+					.img
+						i
+				| Moscow
+			.city.spb 
+				.pin.rotated
+					.img
+						i
+				| Saint Petersburg
+		.row
+			.city.ekb 
+				.pin.rotated
+					.img
+						i
+				| Yekaterinburg
+			.city.krd 
+				.pin.rotated
+					.img
+						i
+				| Krasnodar
+
+
+	.services.block
+		.content
+			h1 Our<br>services
+
+			p.
+				Since the appearance of the arbitration courts system in Russia our Attorneys-at-law activity has been based on 
+				<br>
+				the representation of clients' interests in different kinds of judicial 
+				<br>
+				disputes related to entrepreneurial activity.
+
+			.row
+				.item
+					a.service-item.rotated.img1(href="#1")
+						span.img
+							i
+						| судебные споры и третейское разбирательство
+				.item
+					a.service-item.rotated.img2(href="#2")
+						span.img
+							i
+						| Корпоративное право, сделки, M&A
+				.item
+					a.service-item.rotated.img3(href="#3")
+						span.img
+							i
+						| Банкротство и&nbsp;реструктуризация
+				.item
+					a.service-item.rotated.img4(href="#1")
+						span.img
+							i
+						| Международный арбитраж
+			.row
+				.item.empty
+				.item
+					a.service-item.rotated.img5(href="#1")
+						span.img
+							i
+						| Налоговое право
+				.item
+					a.service-item.rotated.img6(href="#1")
+						span.img
+							i
+						| Энергетика
+				.item
+					a.service-item.rotated.img7(href="#1")
+						span.img
+							i
+						| Недвижимость и&nbsp;строительство
+				.item.empty
+
+			.row
+				.item.empty
+				.item.empty
+				.item
+					a.service-item.rotated.img8(href="#1")
+						span.img
+							i
+						| Государственно-частное партнерство
+				.item
+					a.service-item.rotated.img9(href="#1")
+						span.img
+							i
+						| Природоохрана и&nbsp;недропользование
+				.item.empty
+				.item.empty
+
+
+
+	.clients.block
+		.content
+			h1 Our<br>clients
+			p Click through our Employee to learn more about our team and what motivates them.
+
+			.arrow.left
+			.logos.left
+				.item.logo1.left
+				.item.logo2
+				.item.logo3.left
+				.item.logo4
+				.item.logo5.left
+				.item.logo6
+				.item.logo7.left
+				
+			.more
+				.title ГАЗПРОМ НЕФТЬ
+				p.
+					Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. 
+					<br>
+					Ut enim ad minim veniam, quis nostrud exercitation ullamc.
+				.person
+					.photo.rotated
+						.img
+							i(style="background-image: url(../images/clients/gray.jpg);")
+					.name James Brown,
+					.status loream
+
+			.logos.right
+				.item.logo8.left
+				.item.logo9
+				.item.logo10.left
+				.item.logo11
+				.item.logo12.left
+				.item.logo13
+				.item.logo14.left
+
+			.arrow.right
+
+
+
+
+
+	.press.block
+		.bg31.rotated
+			.img
+				i(style="background-image: url(../images/bg31.jpg);")
+		.bg32.rotated
+			.img
+				i(style="background-image: url(../images/bg32.jpg);")
+		.bg33.rotated
+			.img
+				i(style="background-image: url(../images/bg33.jpg);")
+
+		.content
+			h1 Press center
+			p.
+				Click through our Employee to learn more about our team
+				<br>
+				and what motivates them.			
+			a(href="press.html").all-press.tr-button All press
+
+			.row
+				.item.rotated
+					.img
+						i	
+	            .date
+	              span.day 14 
+	              span.month July
+	              |, 
+	              span.year 2015
+
+	            .text
+	              h4 
+	                a(href="news_item.html").title «Khrenov & Partners» nominated
+
+
+	.ratings.block
+		.content
+			h1 Ratings
+			p.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+				<br>
+				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
 block scripts
 
