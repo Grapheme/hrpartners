@@ -446,7 +446,7 @@ body.index {
 
   .press.block {
     background: #f4f3f3;
-    min-height: 950px;
+    min-height: 1040px;
     top: -16px;
 
     .bg31, .bg32, .bg33 {
@@ -459,6 +459,7 @@ body.index {
         transform: rotate(45deg);
         transform-origin: bottom left;
         border: 0;
+        border-radius: 12px;
 
         i {
           transform: rotate(-45deg);
@@ -471,13 +472,16 @@ body.index {
     }
 
     .bg31 {
-      left: 139px;
+      left: 50%;
+      margin-left: -510px;
     }
     .bg32 {
-      left: 418px;
+      left: 50%;
+      margin-left: -235px;
     }
     .bg33 {
-      left: 697px;
+      left: 50%;
+      margin-left: 40px;
     }
 
     h1 {
@@ -493,9 +497,90 @@ body.index {
     p {
       padding: 0 0 20px 0;
     }
+
+
+
+    .row {
+      display: table;
+      left: 30px;
+      margin-top: -60px;
+      position: relative;
+
+      &.first {
+        margin-top: 120px;
+      }
+
+      &.even {
+        left: 175px; 
+      }
+
+      .item {
+        display: table-cell;
+        text-align: center;
+        width: 290px;
+      
+
+        .img {
+          width: 180px;
+          height: 180px;
+          border-radius: 12px;
+          
+
+          i {
+            width: 200px;
+            height: 200px;
+            font-style: normal;
+            margin-left: -25px;
+            margin-top: 5px;
+          }
+        }
+
+        .date {
+          @include arial(12px);
+          color: #797979;
+          position: relative;
+          padding-bottom: 15px;
+
+          .day {
+            color: #008ccf;
+            font-size: 30px;
+            display: block;
+          }
+        }
+
+        h4 {
+          @include arial-bold-up(14px);
+          margin: 0;  
+          position: relative;
+
+          &:after {
+            content: "";
+            display: block;
+            background: #008ccf;
+            height: 2px;
+            width: 36px;
+
+            position: absolute;
+            left: 50%;
+            margin: 20px 0 0 -18px; 
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: #000;
+
+          &:hover {
+            color: #008ccf;
+          }
+        }
+      }
+    }
   }
 
   .ratings.block {
+    min-height: 1000px;
+
     h1 {
       padding-top: 75px;
       margin-top: 0;
@@ -503,7 +588,133 @@ body.index {
       &::after {
         bottom: -25px;
       }
+    }
 
+    p {
+      // margin: 0 0 80px; 
+    }
+
+    .item {
+      width: 300px;
+      margin-top: 40px;
+
+      &:hover {
+        .img i {
+          opacity: 1;  
+        }
+
+        .details {
+          border: 2px solid #008ccf;
+          h4 {
+            &::after {
+              display: none;
+            }
+          }
+
+          p {
+            display: block;
+          }
+        }
+        
+      }
+
+      .details {
+        border: 2px solid transparent;
+        padding: 30px;
+        margin-top: -30px;
+
+        h4 {
+          @include arial-bold-up(18px);
+          &::after {
+            content: "";
+            background: #008ccf;
+            height: 2px;
+            width: 36px;
+
+            position: absolute;
+            left: 50%;
+            margin: 40px 0 0 -18px; 
+          }
+        }
+
+        p {
+          display: none;
+          color: #797979;
+          @include arial(13px);
+
+          &:last-child {
+            margin-bottom: 0; 
+          }
+        }
+      }
+
+
+
+      .img {
+        width: 220px;
+        height: 220px;
+        border-radius: 18px;
+        
+        i {
+          opacity: 0.4;
+          width: 300px;
+          height: 300px;
+          margin: -40px 0 0 -40px;
+          background-position: center center;
+        }
+      }
+
+      &.center {
+        position: absolute;
+        left: 50%;
+        margin: 80px 0 0 -150px;
+      }
+
+      &.left {
+        position: absolute;
+        left: 50%;
+        margin: 225px 0 0 -150px-350px;
+      }
+
+      &.right {
+        position: absolute;
+        left: 50%;
+        margin: 225px 0 0 -150px+350px;
+      }
+    }
+
+    .slider {
+      width: 300px;
+      margin: 620px auto 0; 
+      position: relative;
+
+      .c {
+        overflow: hidden;
+      }
+
+      
+
+      .arrow {
+        background: url(../images/arrow-grey.png) no-repeat center center;
+        width: 46px;
+        height: 80px;
+        position: absolute;
+        left: -100px;
+        top: 110px;
+        cursor: pointer;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &.left {}
+        &.right {
+          transform: rotate(-180deg);
+          right: -100px;
+          left: auto;
+        }
+      }
     }
   }
 }
