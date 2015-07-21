@@ -30,18 +30,18 @@ body.index {
     .bg.rotated {
       position: absolute;
       overflow: hidden;
-      height: 1100px;
+      height: 1200px;
       width: 100%;
 
       .img {
         position: absolute;
-        margin-top: -590px;
+        margin-top: -720px;
         left: 50%;
-        margin-left: -650px;
+        margin-left: -700px;
         border-radius: 15px;
 
         border: 0;
-        $s: 1300px;
+        $s: 1400px;
 
         width: $s;
         height: $s;
@@ -49,7 +49,7 @@ body.index {
         i {
           width: $s * 1.41;
           height: $s * 1.41;  
-          margin-left: -$s * 0.44;
+          margin: 50px 0 0 -640px;
         }
 
         .s1 {
