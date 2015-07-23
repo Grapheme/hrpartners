@@ -370,7 +370,7 @@ body.index {
           clear: both;
         }
 
-        &:hover {
+        &.active, &:hover {
           opacity: 1;
         }
       }
@@ -391,10 +391,48 @@ body.index {
     .logo13 { background: url(../images/clients/13.png) no-repeat center center; width: 136px; height: 104px;}
     .logo14 { background: url(../images/clients/14.png) no-repeat center center; width: 294px; height: 62px;}
 
-    .more { 
-      color: #000;
+    .card {
       float: left;
       margin-left: 55px;
+
+      width: 320px;
+      height: 410px;
+      perspective: 1000;
+
+      .wrap {
+        position: relative;
+        
+      }
+
+      &.animate {
+        .wrap {
+          transition: 0.6s;
+          transform-style: preserve-3d;
+          transform: rotateY(180deg);
+        }        
+      }
+
+      .front, .back {
+        width: 320px;
+        height: 410px;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+      } 
+
+      .back {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .more { 
+      color: #000;
       text-align: center;
       width: 320px;
       height: 410px;
@@ -634,7 +672,7 @@ body.index {
           padding: 80px 20px 20px;
           // transition-delay: 0s, .1s, .1s, 0s;
           margin-left: 0;
-          
+
           p {
             opacity: 1; 
           }
