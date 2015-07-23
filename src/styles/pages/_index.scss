@@ -13,12 +13,22 @@ body.index {
     background: transparent;
     border: 2px solid #000;
     color: #000;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out; 
+
+    &:hover {
+
+    }
 
     &.big {
       padding: 20px 35px;
       @include arial-bold-up(19px);
       color: #fff;
       border: 2px solid #fff;
+
+      &:hover {
+        background: #fff;
+        color: #008ccf;
+      }
     }
   }
 
@@ -143,6 +153,7 @@ body.index {
             margin-left: -40px;
             margin-top: -40px;
             opacity: 0.7;
+              transition: opacity 0.2s ease-out;
           }
         }
 
@@ -156,7 +167,7 @@ body.index {
           
           i {
             opacity: 1;
-            }
+          }
         }
 
         .status {
@@ -326,6 +337,8 @@ body.index {
       position: absolute;
       bottom: 300px;
       left: -90px;
+      transition: opacity 0.2s ease-out;
+
       &.right {
         transform: rotate(-180deg);
         right: -70px;
@@ -342,6 +355,7 @@ body.index {
       width: 300px;
       float: left;
 
+
       &.right {
         float: right;
       }
@@ -349,6 +363,7 @@ body.index {
       .item {
         opacity: 0.5;
         float: right;
+        transition: opacity 0.2s ease-out;
 
         &.left {
           float: left;
@@ -603,47 +618,71 @@ body.index {
           opacity: 1;  
         }
 
-        .details {
-          border: 2px solid #008ccf;
-          h4 {
-            &::after {
-              display: none;
-            }
-          }
+        h4 {
+          // &::after {
+          //   display: none;
+          // }
+        }
 
+        .details {
+          left: 0;
+          // height: auto;
+          max-height: 400px;
+          width: auto;
+          border: 2px solid #008ccf;
+          top: 200px;
+          padding: 80px 20px 20px;
+          // transition-delay: 0s, .1s, .1s, 0s;
+          margin-left: 0;
+          
           p {
-            display: block;
+            opacity: 1; 
           }
         }
         
       }
 
-      .details {
-        border: 2px solid transparent;
-        padding: 30px;
-        margin-top: -30px;
-
-        h4 {
+      h4 {
           @include arial-bold-up(18px);
-          &::after {
-            content: "";
-            background: #008ccf;
-            height: 2px;
-            width: 36px;
-
-            position: absolute;
-            left: 50%;
-            margin: 40px 0 0 -18px; 
-          }
+          margin: 0;
+          padding: 20px 0 0; 
         }
 
-        p {
-          display: none;
+      .details {
+        box-sizing: content-box;
+        border: 1px solid #008ccf;
+        position: absolute;
+        z-index: 1;
+
+        max-height: 0;
+        width: 36px;
+        margin: 20px 0 0 -18px;
+        left: 50%;
+        top: 290px;
+
+        overflow: hidden;
+        transition: all 0.2s ease;
+        transition-property: top, max-height, width, left, margin;
+        // transition-delay: 0s;
+
+        p {          
+          // display: none;
           color: #797979;
+          opacity: 0;
+          
+          // margin: 30px 0 30px;
+          // padding: 0 20px 0;
+          margin: 0;
+          padding: 0;
+
           @include arial(13px);
 
+          &:first-child {
+
+          }
+
           &:last-child {
-            margin-bottom: 0; 
+            // margin-bottom: 0: 
           }
         }
       }
@@ -654,9 +693,12 @@ body.index {
         width: 220px;
         height: 220px;
         border-radius: 18px;
-        
+        position: relative;
+        z-index: 2;
+
         i {
           opacity: 0.4;
+          transition: opacity 0.2s ease-out;
           width: 300px;
           height: 300px;
           margin: -40px 0 0 -40px;
@@ -687,9 +729,11 @@ body.index {
       width: 300px;
       margin: 620px auto 0; 
       position: relative;
+      height: 450px;
 
       .c {
         overflow: hidden;
+        height: 100%;
       }
 
       
