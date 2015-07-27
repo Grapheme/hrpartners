@@ -2,11 +2,12 @@ body.team {
   .block {
     .content {
       .col {
-        width: 50%;
+        
       }
 
       .managers {
         float: left;
+        width: 520px;
 
         ul {
           list-style: none;
@@ -55,7 +56,7 @@ body.team {
 
         .item {
           float: left;
-          width: 256px;
+          width: 258px;
           padding-top: 30px;
           padding-bottom: 20px;
           // height: 266px;
@@ -84,7 +85,9 @@ body.team {
 
       .team {
         float: right;
+        padding-right: 20px;
         text-align: right;
+        width: 460px;
 
         .search {
           position: relative;

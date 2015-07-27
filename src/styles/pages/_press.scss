@@ -53,6 +53,7 @@ body.press {
 
       .item {
         padding: 40px 0 40px 125px;
+        margin-right: 20px;
         border-bottom: 1px solid #e3e3e3;
         position: relative;
 
@@ -158,6 +159,7 @@ body.press {
         padding: 15px;
         @include arial-bold-up;
         outline: none;
+        margin-bottom: 50px; 
       }
     }
 

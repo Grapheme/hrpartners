@@ -1,4 +1,11 @@
 body.about {
+  .content {
+    p {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+
   .bg .sq1 .img {
     background: url(../images/columns-big.jpg) no-repeat bottom right;
   }

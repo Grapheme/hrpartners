@@ -37,6 +37,9 @@ body.index {
     }
   }
 
+  .block {
+  }
+
   .about.block {
     position: relative;
     z-index: 1; 
@@ -132,16 +135,20 @@ body.index {
     }
 
     .partners {
-      margin-top: 40px;
+      margin-top: 120px;
       padding-bottom: 250px;
+      padding-left: 20px;
+      padding-right: 20px;
 
       .item {
         position: relative;
         font-size: 18px;
         width: 300px;
         text-align: center;
-        margin-top: -200px;
+        margin-top: -320px;
         cursor: pointer;
+        overflow: hidden;
+
 
         $s: 220px;
         .img {
@@ -151,6 +158,7 @@ body.index {
           @include grayscale;
           border-radius: 18px;
           margin-bottom: 70px;
+          margin-top: 50px;
 
           i {
             width: $s * 1.41;
@@ -200,8 +208,7 @@ body.index {
         &.center {
           clear: both;
           margin: 0 auto;
-          top: -50px;
-
+          top: -110px;
         }
       }
     }
@@ -370,6 +377,9 @@ body.index {
       left: -90px;
       transition: opacity 0.2s ease-out;
 
+      display: none;
+
+
       &.right {
         transform: rotate(-180deg);
         right: -70px;
@@ -532,6 +542,7 @@ body.index {
     background: #f4f3f3;
     min-height: 1040px;
     top: -16px;
+    overflow: hidden;
 
     .bg31, .bg32, .bg33 {
       position: absolute;
@@ -586,7 +597,7 @@ body.index {
 
     .row {
       display: table;
-      left: 30px;
+      left: -20px;
       margin-top: -60px;
       position: relative;
 
@@ -595,7 +606,7 @@ body.index {
       }
 
       &.even {
-        left: 175px; 
+        left: 125px; 
       }
 
       .item {
@@ -665,6 +676,10 @@ body.index {
   .ratings.block {
     min-height: 1000px;
 
+    .content {
+      overflow: hidden;
+    }
+
     h1 {
       padding-top: 75px;
       margin-top: 0;
@@ -678,9 +693,10 @@ body.index {
       // margin: 0 0 80px; 
     }
 
+
+
     .item {
       width: 300px;
-      margin-top: 40px;
 
       &:hover {
         .img i {
@@ -699,7 +715,7 @@ body.index {
           max-height: 400px;
           width: auto;
           border: 2px solid #008ccf;
-          top: 200px;
+          top: -60px;
           padding: 80px 20px 20px;
           // transition-delay: 0s, .1s, .1s, 0s;
           margin-left: 0;
@@ -717,6 +733,10 @@ body.index {
           padding: 20px 0 0; 
         }
 
+      .wrap {
+        position: relative;
+      }
+
       .details {
         box-sizing: content-box;
         border: 1px solid #008ccf;
@@ -725,9 +745,9 @@ body.index {
 
         max-height: 0;
         width: 36px;
-        margin: 20px 0 0 -18px;
+        margin: 0px 0 0 -18px;
         left: 50%;
-        top: 290px;
+        top: 20px;
 
         overflow: hidden;
         transition: all 0.2s ease;
@@ -756,14 +776,14 @@ body.index {
         }
       }
 
-
-
       .img {
         width: 220px;
         height: 220px;
         border-radius: 18px;
         position: relative;
         z-index: 2;
+
+        margin:  50px auto 45px;
 
         i {
           opacity: 0.4;
@@ -778,19 +798,19 @@ body.index {
       &.center {
         position: absolute;
         left: 50%;
-        margin: 80px 0 0 -150px;
+        margin: 40px 0 0 -150px;
       }
 
       &.left {
         position: absolute;
         left: 50%;
-        margin: 225px 0 0 -150px-350px;
+        margin: 185px 0 0 -150px-350px;
       }
 
       &.right {
         position: absolute;
         left: 50%;
-        margin: 225px 0 0 -150px+350px;
+        margin: 185px 0 0 -150px+350px;
       }
     }
 
@@ -798,7 +818,7 @@ body.index {
       width: 300px;
       margin: 620px auto 0; 
       position: relative;
-      height: 450px;
+      height: 500px;
 
       .c {
         overflow: hidden;

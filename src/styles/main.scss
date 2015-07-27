@@ -54,7 +54,7 @@ body {
   .content {
     position: relative;
     z-index: 3;
-    max-width: 1024px;
+    width: 1000px;
     margin: 0 auto;
   }
 }
@@ -354,11 +354,16 @@ a.pdf.rotated {
   font-size: 12px;
   z-index: 1;
   
+  .wrap {
+    // position: relative;
+    margin-left: 320px
+  }
+
   .content {
     clear: both;
     text-align: center;
 
-    padding: 150px 0 0 320px;  
+    // padding: 150px 0 0 320px;  
 
     .icon {
       display: inline-block;
