@@ -1,0 +1,60 @@
+
+.footer {
+  font-size: 19px;
+
+  .bg {
+    .wrapper {
+      $padding: -20px;
+
+      .sq1 {
+        border-radius: 15px;
+        margin-bottom: 650px - $padding;
+        margin-right: 180px;
+      }
+
+      .sq2 {
+        margin-right: 0; 
+        margin-bottom: -1740px - $padding; 
+      }
+
+      .sq3 {
+        margin-right: -2050px;
+        margin-bottom: -1210px - $padding;
+      }
+    }
+  }
+
+  .wrap {
+    margin-left: 0;
+  }
+
+  .content {
+    .text p {
+      font-size: 19px;
+      margin: 20px 0 20px
+    }
+
+    form {
+      input, textarea, input[type="submit"], .file {
+        font-size: 19px;  
+      }
+      
+    }
+  }
+}
+
+
+body.index {
+
+}
+
+body.clients {
+  .block {
+    height: 300px;
+  }
+
+  .footer {
+    // display  : none;
+  }
+}
+

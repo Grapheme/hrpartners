@@ -1,0 +1,98 @@
+.header, .block, .footer {
+  .content {
+    // min-width: 768px;
+    width: auto;
+  }
+}
+
+.header {
+  $height: 85px;
+  height: $height;
+  z-index: 10;
+
+  .logo {
+    width: $height;
+    height: $height;
+
+    background-image: url(../images/logo-blue-big.png);
+  }
+
+  .lang {
+    float: left;
+    margin-left: 20px;
+  }
+
+  .menu, .lang {
+    ul li {
+      height: $height;
+
+      a {
+        line-height: $height;
+        font-size: 22px;
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    background: #008ccf;
+    z-index: 2;
+    width: 400px;
+
+    padding: 0;
+
+
+    display: none;
+    transition: all 0.2s ease-out;
+    transition-property: transform;
+    transform: translate(-400px, 0);
+
+    &.opened {
+      transform: translate(0px, 0);  
+    }
+
+    ul {
+      padding-top: $height;
+      padding-bottom: $height;
+
+      li {
+        float: none;
+        text-align: left;
+        border-top: 1px solid #28a5e0;
+        
+        &:last-child {
+          border-bottom: 1px solid #28a5e0;
+        }
+
+        &.active::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 4px;
+          background: #fff;
+          transform: rotate(-45deg);
+          margin-top: -16px;
+          // margin-left: -5px;
+          top: 50%;
+          left: -16px;
+        }
+
+        a {
+          padding: 0 40px;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: block;
+    height: $height;
+    width: $height;
+  }
+}

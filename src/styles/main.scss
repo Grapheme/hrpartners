@@ -204,12 +204,13 @@ a.pdf.rotated {
 
 
 .header {
-  height: 60px;
+  $height: 60px;
+  height: $height;
   background: #008ccf;
 
   .logo {
-    width: 60px;
-    height: 60px;
+    width: $height;
+    height: $height;
     background: #fff url(../images/logo.png) no-repeat center center;
     float: left;
 
@@ -225,6 +226,16 @@ a.pdf.rotated {
     padding-left: 20px;
   }
 
+  .burger {
+    display: none;
+  
+    height: $height;
+    width: $height;
+    float: right;
+    background: url(../images/burger.png) no-repeat  center center;
+  
+  }
+
   .lang {
     float: right
   }
@@ -236,7 +247,7 @@ a.pdf.rotated {
       margin: 0;
 
       li { 
-        height: 60px;
+        height: $height;
         float: left;
         position: relative;
 
@@ -523,6 +534,19 @@ a.pdf.rotated {
 @import 'pages/team';
 @import 'pages/press';
 @import 'pages/index';
+
+@media all and (max-width: 1000px) { 
+  @import 'mobile';
+}
+
+@media all and (min-width: 768px) and (max-width: 1000px) {
+  @import 'tablet';
+}
+
+@media all and (max-width: 768px) {
+  @import 'phone';
+}
+
 
 
 
