@@ -25,11 +25,21 @@ body.team {
         .bx-wrapper {
           position: relative;
 
-          .bx-pager {
+          .bx-viewport {
+            z-index: 1;
+          }
+
+          .bx-controls {
             position: absolute;
             top: 0;
             left: 50%;
             margin-left: -26px; 
+
+            z-index: 2;
+          }
+
+          .bx-pager {
+
 
             .bx-pager-item {
               float: left;
@@ -140,6 +150,7 @@ body.team {
               margin: 50px 0 30px;
               position: relative;
 
+
               &::before {
                 content: '';
                 display: block;
@@ -161,21 +172,30 @@ body.team {
 
               .photo {
                 float: right;
-                margin: 30px 15px 0 0;
+                margin: 0px -5px 0 0;
+                overflow: hidden;
 
-                .img {
-                  width: 125px;
-                  height: 125px;
-                  margin-bottom: 60px;
-
-                  i {
+                .rotated {  
                     width: 180px;
                     height: 180px;
-                    $i: 25px; 
-                    margin-left: -$i;
-                    margin-top: -$i;
+                    padding-top: 40px;
+
+                  .img {
+                    width: 125px;
+                    height: 125px;
+                    margin-bottom: 60px;
+
+                    i {
+                      width: 180px;
+                      height: 180px;
+                      $i: 25px; 
+                      margin-left: -$i;
+                      margin-top: -$i;
+                    }
                   }
                 }
+
+    
               }
             }
 

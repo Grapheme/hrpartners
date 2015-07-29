@@ -27,6 +27,7 @@
 }
 
 
+
 body.services {
   .block {
     .content {
@@ -34,30 +35,32 @@ body.services {
         float: left;  
         width: 400px;
 
-        ul {
-          list-style: none;
-          li {
-            float: left;
-            width: 180px;
-            height: 200px;
-            text-align: center;
+        // ul {
+          // list-style: none;
+        .item {
+          float: left;
+          width: 180px;
+          height: 200px;
+          text-align: center;
 
-            a {
-              display: inline-block;
-            }
+          a {
+            display: inline-block;
+            
+          }
 
-            &.center {
-              width: 360px;
-            }
+          &.center {
+            width: 360px;
           }
         }
+        // }
       }
 
       .page {
         float: right;
         width: 560px;
       }
-      @extend .clearfix;
+
+      @include clearfix;
     }
 
   }

@@ -1,3 +1,110 @@
+@import 'clearfix';
+
+html {
+  font-size: 19px;
+}
+
+.header, .block, .footer {
+  .content {
+    // min-width: 768px;
+    width: auto;
+  }
+}
+
+.header {
+  $height: 85px;
+  height: $height;
+  z-index: 10;
+
+  .logo {
+    width: $height;
+    height: $height;
+
+    background-image: url(../images/logo-blue-big.png);
+  }
+
+  .lang {
+    float: left;
+    margin-left: 20px;
+  }
+
+  .menu, .lang {
+    ul li {
+      height: $height;
+
+      a {
+        line-height: $height;
+        font-size: 22px;
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    background: #008ccf;
+    z-index: 2;
+
+    $width: 400px;
+    width: $width;
+
+    padding: 0;
+
+    display: none;
+    transition: all 0.2s ease-out;
+    transition-property: transform;
+    transform: translate(0, 0);
+    margin-left: -$width;
+
+    &.opened {
+      transform: translate($width, 0);
+    }
+
+    ul {
+      padding-top: $height;
+      padding-bottom: $height;
+
+      li {
+        float: none;
+        text-align: left;
+        border-top: 1px solid #28a5e0;
+        
+        &:last-child {
+          border-bottom: 1px solid #28a5e0;
+        }
+
+        &.active::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 4px;
+          background: #fff;
+          transform: rotate(-45deg);
+          margin-top: -16px;
+          // margin-left: -5px;
+          top: 50%;
+          left: -16px;
+        }
+
+        a {
+          padding: 0 40px;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: block;
+    height: $height;
+    width: $height;
+  }
+}
+
 
 .footer {
   font-size: 19px;
@@ -43,9 +150,109 @@
   }
 }
 
+.block .content h1::after {
+  bottom: -30px;
+  height: 5px;
+}
+
+.rotated {
+  font-size: 19px;
+}
+
+.scroll-top {
+  display: block;  
+  background: url(../images/arrow-up.png) no-repeat center 0;
+  height: 30px; 
+  width: 80px;
+  padding: 50px 0 0;
+  position: relative;
+  left: 50%;
+  margin: 40px 0 0 -170px;
+  text-align: center;
+
+
+  @include arial-bold-up(19px);
+  color: #e5e5e5;
+}
 
 body.index {
+  .tr-button {
+    font-size: 19px;
+  }
 
+  .about.block {
+    .bg2 {
+      background: #f4f3f3;
+      border-radius: 15px;
+      position: absolute;
+      // bottom: 0;
+      // right: 50%;
+
+      // $sq-padding: 60px;
+
+      // .sq1 {
+      $side: 300px;
+      height: $side;
+      width: $side;
+      transform-origin: bottom right;
+      transform: rotate(-45deg);
+      
+      // margin-bottom: 380px + $sq-padding;
+      // margin-right: 310px;
+
+      margin-left: -160px;
+      margin-top: 580px;
+
+      overflow: hidden;
+
+      .img {
+        transform-origin: bottom right;
+        transform: rotate(45deg);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        bottom: -320px;
+        left: -320px;
+      }
+    }
+  }
+
+  .team.block {
+    p {
+      font-size: 19px;
+    } 
+    .partners {
+      margin-top: 100px;
+      margin-bottom: 140px;
+
+      .item {
+        margin-top: -150px;
+        &.center {
+          top: -60px;
+        }
+      }
+    }
+  }
+
+  .contacts.block {
+    .bg.rotated {
+      .img {
+        margin-left: -866px;
+        top: 460px;
+      }
+    }
+
+    .city {
+      display: block;
+      // inline-block;
+      width: auto;
+      border-right: none;
+      &:last-child {
+        // border-right: 1px solid #e9e8df;
+      }
+    }
+  }
 }
 
 body.clients {
@@ -55,6 +262,202 @@ body.clients {
 
   .footer {
     // display  : none;
+  }
+}
+
+a.pdf.rotated {
+
+
+  .img {
+    width: 90px;
+    height: 90px;
+
+    i {
+      width: 130px;
+      height: 130px;
+      margin-top: -20px;
+      margin-left: -20px;
+      background-color: #068fd0; 
+      background-image: url(../images/pdf-white.png);
+    }
+  }
+} 
+
+body.about {
+  .block {
+    a.pdf {
+      margin: 70px 0 60px 220px;
+    }
+  }
+
+  .bg .sq1 .img {
+    background: #f4f3f3;
+  }
+
+  .bg .sq3 {
+    overflow: hidden;
+
+    .img {
+      background: url(../images/columns-big.jpg) no-repeat top left;
+      // bottom: -3200px;
+      // left: -3200px;
+      width: 120%;
+      height: 120%;
+      transform: rotate(45deg);
+      transform-origin: top left;
+      margin-top: - 360px; 
+      margin-left:  360px; 
+    }
+  }
+}
+
+
+body.services {
+  .block {
+    .content {
+      .page, .menu { 
+        float: none;
+        width: auto;
+        @include clearfix;
+      }
+
+      .menu {
+        .item {
+
+          width: 50%;
+          // padding: 0 20px;
+
+          a {
+            width: auto;
+            max-width: 250px;
+            margin: 0 50px;
+          }
+        }
+      }
+
+      .page {
+        padding: 40px;
+      }
+    }
+  }
+}
+
+body.press {
+  .block {
+    .content {
+      .news {
+        float: none;
+        width: auto;
+
+        .item {
+          margin: 0;
+          padding: 40px 40px 40px 150px;
+
+          .image {
+            left: 10px;
+          }
+        }
+
+        button.more {
+          // margin: 0 20px;
+        }
+      }
+
+      .calendar {
+        float: none;
+        margin: 0 auto 40px;
+        position: relative;
+
+        .month {
+           // @include clearfix;
+
+          .prev, .next {
+            position: absolute;
+            background: url(../images/arrow-grey.png) no-repeat center center;
+            
+            top: 50%;
+
+            width: 46px;
+            height: 80px;
+
+            margin-top: -23px;
+
+
+            &:after {
+              display: none;
+            }
+          }
+
+          .prev {
+            left: -80px;
+          }
+
+          .next {
+            right: -80px;
+            transform: rotate(-180deg);
+          }
+        }
+
+        .cal {
+          clear: both;
+        }
+      }
+    }
+  }
+}
+
+
+
+body.team {
+  .block {
+    .content {
+      h2 {
+        font-size: 50px;
+        width: 400px;
+        margin: 30px auto;
+      }
+
+      .managers {
+        float: none;
+        width: auto;
+        text-align: center; 
+
+        .slides {
+          width: 640px;
+          margin: 0 auto;
+
+          .item {
+            width: 320px;
+          }
+        }
+      }
+
+      .team {
+        float: none;
+        width: auto;
+        text-align: center; 
+        padding: 0;
+
+        .search {
+          float: none;
+          margin: 0 auto 30px;
+        }
+
+        .persons {
+          .item {
+            .more {
+              float: none;
+              width: auto;
+
+              &::before {
+                right: 50%;
+                margin-right: -30px; 
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 

@@ -8,53 +8,54 @@ block content
 		.content
 			h1 Services
 
-			.menu 
-				ul
-					li
-						a.service-item.rotated.img1(href="#1")
-							span.img
-								i
-							| судебные споры и третейское разбирательство
-					li
-						a.service-item.rotated.img2(href="#2")
-							span.img
-								i
-							| Корпоративное право, сделки, M&A
-					li
-						a.service-item.rotated.img3(href="#3")
-							span.img
-								i
-							| Банкротство и&nbsp;реструктуризация
-					li
-						a.service-item.rotated.img4(href="#1")
-							span.img
-								i
-							| Международный арбитраж
-					li
-						a.service-item.rotated.img5(href="#1")
-							span.img
-								i
-							| Налоговое право
-					li
-						a.service-item.rotated.img6(href="#1")
-							span.img
-								i
-							| Энергетика
-					li
-						a.service-item.rotated.img7(href="#1")
-							span.img
-								i
-							| Недвижимость и&nbsp;строительство
-					li
-						a.service-item.rotated.img8(href="#1")
-							span.img
-								i
-							| Государственно-частное партнерство
-					li.center
-						a.service-item.rotated.img9(href="#1")
-							span.img
-								i
-							| Природоохрана и&nbsp;недропользование
+			.menu.slides
+				.item
+					a.service-item.rotated.img1(href="#1")
+						span.img
+							i
+						| судебные споры и третейское разбирательство
+				.item
+					a.service-item.rotated.img2(href="#2")
+						span.img
+							i
+						| Корпоративное право, сделки, M&A
+				.item
+					a.service-item.rotated.img3(href="#3")
+						span.img
+							i
+						| Банкротство и&nbsp;реструктуризация
+				.item
+					a.service-item.rotated.img4(href="#1")
+						span.img
+							i
+						| Международный арбитраж
+			
+				.item
+					a.service-item.rotated.img5(href="#1")
+						span.img
+							i
+						| Налоговое право
+				.item
+					a.service-item.rotated.img6(href="#1")
+						span.img
+							i
+						| Энергетика
+				.item
+					a.service-item.rotated.img7(href="#1")
+						span.img
+							i
+						| Недвижимость и&nbsp;строительство
+				.item
+					a.service-item.rotated.img8(href="#1")
+						span.img
+							i
+						| Государственно-частное партнерство
+			
+				.item.center
+					a.service-item.rotated.img9(href="#1")
+						span.img
+							i
+						| Природоохрана и&nbsp;недропользование
 
 
 
@@ -71,7 +72,44 @@ block content
 				p The firm’s lawyers will occasionally find themselves representing a client in parallel in several interrelated court cases and have therefore the ability to simultaneously coordinate procedural case strategies if the circumstances warrant it.
 				p The firm’s experience of protecting clients’ interests is not limited to Russian courts. K&P’s litigators successfully represent clients before international arbitration courts (London Court of International Arbitration, Stockholm Chamber of Commerce, International Commercial Arbitration Court at the Chamber of Commerce and Industry of the Russian Federation etc.) 
 
+		
+		.scroll-top Top
 
 block scripts
+	script.
+		var menu = $('.block .content .menu')
+		var slider
+
+		$(document).on('enterState', function(e, state) {
+			if (slider) {
+				slider.destroySlider()
+				slider = null
+			}
+			
+			var items = menu.find('.item')
+			if (items.parent('.slide').length) {
+				items.unwrap()
+			}
+
+
+			if (state.id === 'phone' || state.id === 'tablet') {
+				var itemsPerSlide = 2
+				if (state.id === 'tablet') itemsPerSlide = 4 
+				var items = items.toArray()
+
+				while (items.length) {
+					var i = items.splice(0, itemsPerSlide)
+					$(i).wrapAll('<div class="slide"></div>')
+				}
+
+				slider = menu.bxSlider({
+					pager: false,
+					nextText: '',
+					prevText: ''
+				})
+			} 
+		})
+
+
 
 		

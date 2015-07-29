@@ -59,6 +59,41 @@ body {
   }
 }
 
+.scroll-top {
+  display: none;
+}
+
+
+.bx-wrapper {
+  position: relative;
+
+  .bx-prev, .bx-next {
+    width: 46px;
+    height: 80px;
+    background: url(../images/arrow-light-grey.png) no-repeat center center;
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+
+    cursor: pointer;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .bx-prev {
+    transform: rotate(-180deg);
+    left: 10px;
+  }
+  .bx-next {
+    right: 10px;
+  }
+}
+
 
 // все об этих серых штуках на фоне внизу, под формой
 .footer .bg {
@@ -146,9 +181,8 @@ body {
     width: 70px;
     height: 70px;
     background: #fff;
-    margin: 0 auto;
     transform: rotate(-45deg);
-    margin: 0 auto 30px;
+    margin: 15px auto 30px;
     overflow: hidden;
 
     i {
@@ -535,20 +569,14 @@ a.pdf.rotated {
 @import 'pages/press';
 @import 'pages/index';
 
-@media all and (max-width: 1000px) { 
-  @import 'mobile';
-}
 
-@media all and (min-width: 768px) and (max-width: 1000px) {
+@media all and (max-width: 1000px) {
   @import 'tablet';
 }
 
 @media all and (max-width: 768px) {
   @import 'phone';
 }
-
-
-
 
 
 

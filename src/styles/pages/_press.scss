@@ -2,6 +2,8 @@ body.press {
 
 
   .block .content {
+    @include clearfix;
+
     .menu {
       background: #f4f3f3;
       padding: 30px;
@@ -22,6 +24,7 @@ body.press {
         display: table-cell;
         border-right: 2px solid #008ccf;
         padding: 5px 40px;
+        vertical-align: middle;
 
         a {
           display: block;
@@ -168,6 +171,11 @@ body.press {
       @include arial-bold;
       user-select: none;
 
+      $day: 55px;
+      $border: 1px; 
+      $width: ($day + $border) * 7;
+      width: $width;
+
       .month {
         color: #008ccf;
         text-transform: uppercase;
@@ -178,6 +186,7 @@ body.press {
           display: inline-block;
           height: 20px;
           vertical-align: middle;
+          
         }
 
         .prev, .next {
@@ -187,6 +196,7 @@ body.press {
           padding: 5px 10px;
           position: relative;
           height: 20px;
+
           
 
           &::after {
@@ -232,12 +242,10 @@ body.press {
       }
 
       .cal {
-        // border: 1px solid #e3e3e3;
         padding: 0 0 0 0; 
-        $day: 55px;
-        $border: 1px; 
-        width: ($day + $border) * 7;
-        clear: both;
+        
+        width: $width;
+        @include clearfix;
 
         a {
           color: #c5c5c5;

@@ -25,11 +25,13 @@ gulp.task('server', function() {
 });
 
 var js_files = bowerMain('js','min.js');
-console.log('main bower files [minified]:');
-console.log(js_files.minified);
+scripts = js_files.normal.concat(app_path + '/scripts/*.js')
+console.log('scripts load order:');
+console.log(scripts);
+
 
 gulp.task('scripts', function() {
-	return gulp.src(js_files.minified.concat(app_path + '/scripts/*.js'))
+	return gulp.src(scripts)
 		.pipe(concat('main.concat.js'))
 		.pipe(gulp.dest(build_path + '/scripts/'))
 		.pipe(connect.reload());

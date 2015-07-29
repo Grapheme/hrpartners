@@ -36,7 +36,54 @@ html.no-js(lang="")
       $('.header .burger').click(function() {
         $('.header .menu').toggleClass('opened');
       })
-    
+      
+      $('.scroll-top').click(function(){
+        var body = $("html, body");
+        body.stop().animate({ scrollTop: 0 }, { duration: 400 });
+      })
 
 
     block scripts
+
+    script.
+      //- $(document).on('enterState', function(e, state) {
+      //-   console.log('-> ', state.id)
+      //- })
+    
+      //- $(document).on('leaveState', function(e, state) {
+      //-   console.log('<- ', state.id)
+      //- })
+
+      function addStateEvent(options) {
+        var m = matchMedia(options.query)
+        m.addListener(function(mql){
+          if (mql.matches) {
+            setTimeout(function () {
+              $(document).trigger('enterState', [options])
+            }, 0)
+          } else {
+            $(document).trigger('leaveState', [options])
+          }
+        })
+
+        if (m.matches) $(document).trigger('enterState', [options])
+      }
+      
+      addStateEvent({
+        id: 'desktop',
+        query: '(min-width: 1001px)'
+      });
+
+      addStateEvent({
+        id: 'tablet',
+        query: '(min-width: 768px) and (max-width: 1000px)'
+      });
+
+      addStateEvent({
+        id: 'phone',
+        query: '(max-width: 767px)'
+      });
+
+
+
+
