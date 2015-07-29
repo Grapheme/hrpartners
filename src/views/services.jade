@@ -77,38 +77,36 @@ block content
 
 block scripts
 	script.
-		var menu = $('.block .content .menu')
-		var slider
+		(function() {
 
-		$(document).on('enterState', function(e, state) {
-			if (slider) {
-				slider.destroySlider()
-				slider = null
-			}
-			
-			var items = menu.find('.item')
-			if (items.parent('.slide').length) {
-				items.unwrap()
-			}
+			var menu = $('.block .content .menu');
+			var slider;
 
-
-			if (state.id === 'phone' || state.id === 'tablet') {
-				var itemsPerSlide = 2
-				if (state.id === 'tablet') itemsPerSlide = 4 
-				var items = items.toArray()
-
-				while (items.length) {
-					var i = items.splice(0, itemsPerSlide)
-					$(i).wrapAll('<div class="slide"></div>')
+			$(document).on('enterState', function(e, state) {
+				if (slider) {
+					slider.destroySlider();
+					slider = null;
+				}
+				
+				var items = menu.find('.item')
+				if (items.parent('.slide').length) {
+					items.unwrap();
 				}
 
-				slider = menu.bxSlider({
-					pager: false,
-					nextText: '',
-					prevText: ''
-				})
-			} 
-		})
+				if (state.id === 'phone' || state.id === 'tablet') {
+					var itemsPerSlide = 2;
+					if (state.id === 'tablet') itemsPerSlide = 4;
+					wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
+
+					slider = menu.bxSlider({
+						pager: false,
+						nextText: '',
+						prevText: ''
+					});
+				}
+			});
+
+		})();
 
 
 

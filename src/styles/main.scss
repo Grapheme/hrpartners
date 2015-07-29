@@ -18,7 +18,7 @@
 @mixin arial-bold($size: 14px) {
   font: {
     size: $size;
-    family: 'Arial Bold', Arial, sans-serif;
+    family: 'Arial Bold', Arial, Helvetica, sans-serif;
     weight: bold;
 
   }

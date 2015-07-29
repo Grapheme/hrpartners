@@ -82,60 +82,56 @@ block content
 block append scripts
   script.
     $('.col.team .persons .item .name').add('.col.team .persons .item .close').click(function(e) {
-      $(e.target).closest('.item').find('.more').slideToggle()
-    })
+      $(e.target).closest('.item').find('.more').slideToggle();
+    });
 
-    var lastValue = ''
+    var lastValue = '';
     $('.col.team .search input').on('keyup change', function(e) {
-      var value = $(e.target).val().replace(/\s/g,'').toLowerCase()
-      if (value === lastValue) return
-      lastValue = value
+      var value = $(e.target).val().replace(/\s/g,'').toLowerCase();
+      if (value === lastValue) return;
+      lastValue = value;
 
-      $('.col.team .search .close').toggle(Boolean(value))
+      $('.col.team .search .close').toggle(Boolean(value));
 
       $('.col.team .persons .item').each(function() {
-        var item = $(this)
-        var name = item.find('.name').text().replace(/\s/g,'').toLowerCase()
-        item.toggle(name.indexOf(value) > -1)
-      })
-    })
+        var item = $(this);
+        var name = item.find('.name').text().replace(/\s/g,'').toLowerCase();
+        item.toggle(name.indexOf(value) > -1);
+      });
+    });
 
     $('.col.team .search .close').click(function(){
-      $('.col.team .search input').val('').change()
-    })
+      $('.col.team .search input').val('').change();
+    });
 
+    (function(){
+      var managers = $('.col.managers .slides');
+      var slider;
 
-
-    var managers = $('.col.managers .slides')
-    var slider
-
-    $(document).on('enterState', function(e, state) {
-      if (slider) {
-        slider.destroySlider()
-        slider = null
-      }
-      
-      var items = managers.find('.item')
-      if (items.parent('.slide').length) {
-        items.unwrap()
-      }
-
-      if (state.id === 'desktop') {
-        var itemsPerSlide = 8
-        if (state.id === 'tablet') itemsPerSlide = 4 
-        var items = items.toArray()
-
-        while (items.length) {
-          var i = items.splice(0, itemsPerSlide)
-          $(i).wrapAll('<div class="slide"></div>')
+      $(document).on('enterState', function(e, state) {
+        if (slider) {
+          slider.destroySlider();
+          slider = null;
+        }
+        
+        var items = managers.find('.item');
+        if (items.parent('.slide').length) {
+          items.unwrap();
         }
 
-        slider = managers.bxSlider({
-          controls: false,
-        })
-      }
+        if (state.id === 'desktop') {
+          var itemsPerSlide = 8;
+          if (state.id === 'tablet') itemsPerSlide = 4;
+          wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
 
-    })
+          slider = managers.bxSlider({
+            controls: false,
+          });
+        }
+      });
+    })();
+
+
 
 
 
