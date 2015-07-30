@@ -45,6 +45,10 @@ $header-menu-width: 250px;
   }
 }
 
+.scroll-top {
+  margin-left: -120px; 
+}
+
 body.about {
   .block {
     .content {
@@ -121,7 +125,56 @@ body.team {
 body.press {
   .block {
     .content {
-      
+      .menu {
+        padding: 15px;
+
+        li {
+          display: block;
+          padding: 5px 0 25px;
+          border-right: 0;
+          position: relative;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 36px;
+            height: 2px;
+            background: #008ccf;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%,0);
+          }
+
+          &:last-child {
+            &:after { display: none }
+            padding-bottom: 5px; 
+          }
+        }
+      }
+
+      .news {
+        .item {
+          padding: 40px 40px 40px 30px;
+
+          .image {
+            right: 10px;
+            top: 25px;
+            left: auto;
+          }
+
+          .text h4 {
+            margin: 16px 40px 10px 0;
+            .title {
+              white-space: normal;
+            }
+          }
+        }
+      }
+
+      .calendar {
+        display: none;
+      } 
     }
   }
 }
