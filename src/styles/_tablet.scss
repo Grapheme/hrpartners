@@ -419,6 +419,11 @@ body.team {
         width: auto;
         text-align: center; 
 
+        .bx-wrapper {
+          width: 640px;
+          margin: 0 auto; 
+        }
+
         .slides {
           width: 640px;
           margin: 0 auto;
@@ -426,6 +431,10 @@ body.team {
           .item {
             width: 320px;
           }
+        }
+
+        h2 {
+          text-align: center;
         }
       }
 

@@ -5,6 +5,10 @@ body.team {
         
       }
 
+      h2 {
+        color:  #a9a9a9;
+      }
+
       .managers {
         float: left;
         width: 520px;
@@ -32,21 +36,26 @@ body.team {
           .bx-controls {
             position: absolute;
             top: 0;
-            left: 50%;
-            margin-left: -26px; 
+            left: 0;
+            // margin-left: -26px; 
+
+            width: 100%;
 
             z-index: 2;
           }
 
           .bx-pager {
-
+            text-align: center; 
 
             .bx-pager-item {
-              float: left;
+              // float: left;
+
+              display: inline-block;
               width: 20px;
+              overflow: hidden; 
 
               a {
-                display: block;
+                display: inline-block;
                 width: 10px;
                 height: 10px;
                 background: #fff;
@@ -54,6 +63,7 @@ body.team {
                 text-indent: -9000px;
                 transform: rotate(-45deg);
                 border-radius: 4px;
+                vertical-align: middle;
 
                 &.active {
                   background: #008ccf;

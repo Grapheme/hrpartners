@@ -576,7 +576,7 @@ a.pdf.rotated {
   @import 'tablet';
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   @import 'phone';
 }
 
