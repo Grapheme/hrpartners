@@ -92,6 +92,11 @@ body {
   .bx-next {
     right: 10px;
   }
+
+  .bx-viewport .item { 
+    min-height: 1px; 
+    min-width: 1px; 
+  }
 }
 
 

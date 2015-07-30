@@ -254,7 +254,7 @@ block content
 			a(href="press.html").all-press.tr-button All press
 
 			.row.first
-				.item.rotated
+				.item.item1.rotated
 					.img
 						i
 							.date
@@ -266,7 +266,7 @@ block content
 							.text
 								h4 
 									a(href="news_item.html").title Yukov, Khrenov and Partners
-				.item.rotated
+				.item.item3.rotated
 					.img
 						i
 							.date
@@ -278,7 +278,7 @@ block content
 							.text
 								h4 
 									a(href="news_item.html").title Law on controlled<br>foreign companies
-				.item.rotated
+				.item.item5.rotated
 					.img
 						i
 							.date
@@ -291,7 +291,7 @@ block content
 								h4 
 									a(href="news_item.html").title Best Legal<br>Departments 2014
 			.row.even
-				.item.rotated
+				.item.item2.rotated
 					.img
 						i
 							.date
@@ -303,7 +303,7 @@ block content
 							.text
 								h4 
 									a(href="news_item.html").title Yukov, Khrenov and Partners
-				.item.rotated
+				.item.item4.rotated
 					.img
 						i
 							.date
@@ -315,7 +315,7 @@ block content
 							.text
 								h4 
 									a(href="news_item.html").title Law on controlled<br>foreign companies
-				.item.rotated
+				.item.item6.rotated
 					.img
 						i
 							.date
@@ -333,7 +333,6 @@ block content
 			h1 Ratings
 			p.
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-				<br>
 				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
 
@@ -364,46 +363,86 @@ block content
 					.details
 						p recommends “Khrenov and Partners” in the area of arbitration litigation.
 
-
+			
 			.slider
-				.arrow.left
-				.arrow.right
-				.c
-					.item.rotated
-						.img
-							i(style="background-image: url(../images/ratings/4.png); background-position: 62% center;")
-						h4 hambers & Partners
-						.wrap
-							.details
-								p recommends “Khrenov and Partners” in the area of arbitration litigation.
+				.item.item1.rotated
+					.img
+						i(style="background-image: url(../images/ratings/1.png);")
+
+					h4 hambers & Partners
+					.wrap
+						.details
+							p recommends “Khrenov and Partners” in the area of arbitration litigation.
+
+
+				.item.item2.rotated
+					.img
+						i(style="background-image: url(../images/ratings/2.png);")
+					h4 LEGAL 500
+					.wrap
+						.details
+							p recommends “Khrenov and Partners” in the area of arbitration litigation.
+							p recommends “Khrenov and Partners” in the area of arbitration litigation.
+
+				.item.item3.rotated
+					.img
+						i(style="background-image: url(../images/ratings/3.png);")
+					h4 hambers & Partners
+					.wrap
+						.details
+							p recommends “Khrenov and Partners” in the area of arbitration litigation.
+
+
+				.item.rotated
+					.img
+						i(style="background-image: url(../images/ratings/4.png); background-position: 62% center;")
+					h4 hambers & Partners
+					.wrap
+						.details
+							p recommends “Khrenov and Partners” in the area of arbitration litigation.
+
+				.item.rotated
+					.img
+						i(style="background-image: url(../images/ratings/4.png); background-position: 62% center;")
+					h4 hambers & Partners
+					.wrap
+						.details
+							p recommends “Khrenov and Partners” in the area of arbitration litigation.
+
+				.item.rotated
+					.img
+						i(style="background-image: url(../images/ratings/4.png); background-position: 62% center;")
+					h4 hambers & Partners
+					.wrap
+						.details
+							p recommends “Khrenov and Partners” in the area of arbitration litigation.
 
 
 
 block scripts
 	script.
 		// блок контактов по городам
-		(function() {
+		$(function() {
 			var cities = $('.contacts.block .city');
 
 			$(document).on('enterState', function(e, state) {
 				var rows = cities.parent('.row').length;
 				var wrapped = cities.length / rows;
 
-				if (state.id === 'desktop' && wrapped != 2) {
-					cities.unwrap()
-					wrapSlices(cities, 2, '<div class="row"></div>')
-				}	
+				var citiesPerRow;
+				if (state.id === 'desktop' && wrapped != 2) citiesPerRow = 2;
+				if (state.id != 'desktop' && wrapped != 1) citiesPerRow = 1;
 
-				if (state.id != 'desktop' && wrapped != 1) {
+				if (citiesPerRow) {
 					cities.unwrap()
-					wrapSlices(cities, 1, '<div class="row"></div>')
-				}		
+					wrapSlices(cities, citiesPerRow, '<div class="row"></div>')
+				}	
 			});
-		})();
+		});
 
 
 		// блок услуг
-		(function() {
+		$(function() {
 			var list = $('.services.block .list')
 			var services = list.find('.item:not(.empty)');
 			var slider;
@@ -416,7 +455,7 @@ block scripts
 					if (slider) {
 						slider.destroySlider();
 						slider = null;
-					}	
+					}
 					services.unwrap();
 					wrapSlices(services, 4, '<div class="row"></div>');
 				}
@@ -433,31 +472,64 @@ block scripts
 					});
 				}
 			});
-		})();
+		});
 
 		// блок пресс-клуба
-		(function() {
-			var news = $('.press.block .item');
-			var visible = { visibility: 'visible' };
-			var hidden = { visibility: 'hidden' };
+		//- (function() {
+		//- 	var news = $('.press.block .item');
+		//- 	var visible = { visibility: 'visible' };
+		//- 	var hidden = { visibility: 'hidden' };
+
+		//- 	$(document).on('enterState', function(e, state) {
+		//- 		if (state.id === 'desktop') {
+		//- 			news.css(visible).slice(6).css(hidden);
+		//- 		}
+		//- 		if (state.id === 'tablet') {
+		//- 			news.css(visible).slice(5).css(hidden);
+		//- 		}
+		//- 		if (state.id === 'phone') {
+		//- 			news.css(visible).slice(3).css(hidden);
+		//- 		}
+		//- 	});
+		//- })();
+	
+	
+		// блок рэйтингов
+		$(function() {
+			var ratings = $('.ratings.block .slider');
+			var duplicated = ratings.find('.item1, .item2, .item3'); 
+			var slider;
+			var sliderOptions = {
+				pager: false,
+				nextText: '',
+				prevText: ''
+			};
 
 			$(document).on('enterState', function(e, state) {
+				//- console.log(state.id, ratings.has(duplicated).length)
 				if (state.id === 'desktop') {
-					news.css(visible).slice(6).css(hidden);
-				}
-				if (state.id === 'tablet') {
-					news.css(visible).slice(5).css(hidden);
-				}
-				if (state.id === 'phone') {
-					news.css(visible).slice(3).css(hidden);
-				}
-				
-			});
-		})();
+					if (slider) {
+						slider.destroySlider();
+						slider = null;
+					}
+					duplicated.remove();
+					slider = ratings.bxSlider(sliderOptions);
 
+				} else if (!ratings.has(duplicated).length) {
+					if (slider) {
+						slider.destroySlider();
+						slider = null;
+					}
+					ratings.prepend(duplicated);
+					
+				}	
+
+				if (!slider) slider = ratings.bxSlider(sliderOptions);
+			});
+		});
 
 		// анимация какрточки с отзывом клиента
-		(function() {
+		$(function() {
 			
 			var i = 0;
 			var card = $('.clients.block .card')
@@ -489,7 +561,7 @@ block scripts
 					}, 700)
 				}, delay);
 			});
-		})();
+		});
 
 
 		

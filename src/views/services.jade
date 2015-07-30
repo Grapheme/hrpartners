@@ -77,7 +77,7 @@ block content
 
 block scripts
 	script.
-		(function() {
+		$(function() {
 
 			var menu = $('.block .content .menu');
 			var slider;
@@ -93,20 +93,20 @@ block scripts
 					items.unwrap();
 				}
 
-				if (state.id === 'phone' || state.id === 'tablet') {
-					var itemsPerSlide = 2;
-					if (state.id === 'tablet') itemsPerSlide = 4;
-					wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
+				var itemsPerSlide;
+				if (state.id === 'phone' || state.id === 'tablet') itemsPerSlide = 2;
+				if (state.id === 'tablet') itemsPerSlide = 4;
+				
+				wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
 
-					slider = menu.bxSlider({
-						pager: false,
-						nextText: '',
-						prevText: ''
-					});
-				}
+				slider = menu.bxSlider({
+					pager: false,
+					nextText: '',
+					prevText: ''
+				});
 			});
 
-		})();
+		});
 
 
 

@@ -38,28 +38,31 @@ html.no-js(lang="")
       })
       
       $('.scroll-top').click(function(){
-        var body = $("html, body");
+        var body = $('html, body');
         body.stop().animate({ scrollTop: 0 }, { duration: 400 });
       })
 
     block scripts
 
     script.
-      addStateEvent({
+      ViewStates.add({
         id: 'desktop',
         query: '(min-width: 1001px)'
       });
 
-      addStateEvent({
+      ViewStates.add({
         id: 'tablet',
         query: '(min-width: 768px) and (max-width: 1000px)'
       });
 
-      addStateEvent({
+      ViewStates.add({
         id: 'phone',
         query: '(max-width: 767px)'
       });
 
+      
+      $(function() {
+        ViewStates.init();
+      });
 
-
-
+      

@@ -15,17 +15,29 @@ function wrapSlices($items, itemsPerBlock, wrapperHTML) {
 //-   console.log('<- ', state.id)
 //- })
 
-function addStateEvent(options) {
-  var m = matchMedia(options.query);
-  m.addListener(function(mql){
-    if (mql.matches) {
-      setTimeout(function () {
-        $(document).trigger('enterState', [options]);
-      }, 0);
-    } else {
-      $(document).trigger('leaveState', [options]);
-    }
-  });
+var ViewStates = { 
+  states: [],
 
-  if (m.matches) $(document).trigger('enterState', [options]);
-}
+  add: function(state) {
+    state.queryObj = matchMedia(state.query); 
+    state.queryObj.addListener(function(mql){ 
+      if (mql.matches) {
+        setTimeout(function () {
+          $(document).trigger('enterState', [state]);
+        }, 0);
+      } else {
+        $(document).trigger('leaveState', [state]);
+      }
+    });
+    this.states.push(state);
+  },
+
+  init: function() {
+    for (var i = 0; i < this.states.length; i++) {
+      var state = this.states[i];
+      if (state.queryObj.matches) {
+        $(document).trigger('enterState', [state]);
+      }
+    }
+  }
+};

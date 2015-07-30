@@ -104,7 +104,7 @@ block append scripts
       $('.col.team .search input').val('').change();
     });
 
-    (function(){
+    $(function(){
       var managers = $('.col.managers .slides');
       var slider;
 
@@ -119,17 +119,16 @@ block append scripts
           items.unwrap();
         }
 
-        if (state.id === 'desktop') {
-          var itemsPerSlide = 8;
-          if (state.id === 'tablet') itemsPerSlide = 4;
-          wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
+        var itemsPerSlide;
+        if (state.id === 'desktop') itemsPerSlide = 8;
+        if (state.id === 'tablet') itemsPerSlide = 4;
+        wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
 
-          slider = managers.bxSlider({
-            controls: false,
-          });
-        }
+        slider = managers.bxSlider({
+          controls: false,
+        });
       });
-    })();
+    });
 
 
 

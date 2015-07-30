@@ -318,6 +318,31 @@ body.index {
     .row {
       left: 0px;
     }
+
+    .item6 {
+      visibility: hidden;
+    }
+  }
+
+  .ratings.block {
+    .content {
+      .bx-wrapper {
+        width: 400px;
+        margin: 50px auto 0; 
+      }
+
+      p {
+        padding: 30px;
+      }
+
+      .item.left, .item.center, .item.right {
+        display: none;
+      }
+
+      .item1, .item2, .item3 { 
+        display: block;
+      }
+    }
   }
 }
 

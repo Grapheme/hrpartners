@@ -674,10 +674,11 @@ body.index {
   }
 
   .ratings.block {
-    min-height: 1000px;
+    
 
     .content {
       overflow: hidden;
+      min-height: 1000px;
     }
 
     h1 {
@@ -697,6 +698,7 @@ body.index {
 
     .item {
       width: 300px;
+      min-height: 500px;
 
       &:hover {
         .img i {
@@ -815,39 +817,79 @@ body.index {
     }
 
     .slider {
-      width: 300px;
-      margin: 620px auto 0; 
       position: relative;
-      height: 500px;
+      width: 500px;
 
-      .c {
-        overflow: hidden;
-        height: 100%;
+      .item1, .item2, .item3 { 
+        display: none;
       }
+    } 
+
+    .bx-wrapper {
+      width: 400px;
+      margin: 620px auto 0; 
+
+      .bx-controls {
+        z-index: 2;
+
+        .bx-next, .bx-prev {
+          top: 165px;
+          z-index: 2;
+        }
+
+        .bx-prev {
+          left: -30px;
+        }
+        
+        .bx-next {
+          right: -30px;
+        }        
+      }
+
+      .bx-viewport {
+        z-index: 1  ;
+      }
+    }
+
+
+
+
+
+
+
+    // .slider {
+    //   
+    //   
+    //   height: 500px;
+
+    //   .c {
+    //     overflow: hidden;
+    //     height: 100%;
+    //   }
 
       
 
-      .arrow {
-        background: url(../images/arrow-grey.png) no-repeat center center;
-        width: 46px;
-        height: 80px;
-        position: absolute;
-        left: -100px;
-        top: 110px;
-        cursor: pointer;
-        opacity: 0.5;
+    //   .arrow {
+    //     background: url(../images/arrow-grey.png) no-repeat center center;
+    //     width: 46px;
+    //     height: 80px;
+    //     position: absolute;
+    //     left: -100px;
+    //     top: 110px;
+    //     cursor: pointer;
+    //     opacity: 0.5;
 
-        &:hover {
-          opacity: 1;
-        }
+    //     &:hover {
+    //       opacity: 1;
+    //     }
 
-        &.left {}
-        &.right {
-          transform: rotate(-180deg);
-          right: -100px;
-          left: auto;
-        }
-      }
-    }
+    //     &.left {}
+    //     &.right {
+    //       transform: rotate(-180deg);
+    //       right: -100px;
+    //       left: auto;
+    //     }
+    //   }
+    // }
   }
 }
