@@ -346,10 +346,11 @@ body.index {
 
   .clients.block {
     background: #0086c3 url(../images/bg2.jpg) no-repeat center center;
-    min-height: 950px;
+    // max-height: 950px;
 
     .content {
-      min-height: 950px;
+      // min-height: 950px;
+      padding-bottom: 40px;
     }
 
     h1 {
@@ -365,7 +366,7 @@ body.index {
 
     p {
       color: #fff;
-      padding-bottom: 60px; 
+      padding-bottom: 20px; 
     }
 
     .arrow {
@@ -393,23 +394,28 @@ body.index {
     }
 
     .logos {
-      width: 300px;
-      float: left;
+      // width: 300px;
+      // float: left;
 
-
-      &.right {
-        float: right;
-      }
+      // &.right {
+        // float: right;
+      // }
 
       .item {
         opacity: 0.5;
-        float: right;
+        // float: right;
         transition: opacity 0.2s ease-out;
+        // float: left;
 
-        &.left {
-          float: left;
-          clear: both;
-        }
+        vertical-align: middle;
+        padding: 0 0 20px 20px;
+        display: inline-block;
+
+
+        // &.left {
+          // 
+          // clear: both;
+        // }
 
         &.active, &:hover {
           opacity: 1;

@@ -184,8 +184,9 @@ block content
 			h1 Our<br>clients
 			p Click through our Employee to learn more about our team and what motivates them.
 
-			.arrow.left
-			.logos.left
+			//- .arrow.left
+			.logos 
+				//- .left
 				.item.logo1.left
 				.item.logo2
 				.item.logo3.left
@@ -194,37 +195,38 @@ block content
 				.item.logo6
 				.item.logo7.left
 				
-			.card
-				.wrap
-					.front.more
-						.title ГАЗПРОМ НЕФТЬ
-						p.
-							Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. 
-							<br>
-							Ut enim ad minim veniam, quis nostrud exercitation ullamc.
-						.person
-							.photo.rotated
-								.img
-									i(style="background-image: url(../images/clients/gray.jpg);")
-							.name James Brown,
-							.status loream
+				//- .card
+				//- 	.wrap
+				//- 		.front.more
+				//- 			.title ГАЗПРОМ НЕФТЬ
+				//- 			p.
+				//- 				Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. 
+				//- 				<br>
+				//- 				Ut enim ad minim veniam, quis nostrud exercitation ullamc.
+				//- 			.person
+				//- 				.photo.rotated
+				//- 					.img
+				//- 						i(style="background-image: url(../images/clients/gray.jpg);")
+				//- 				.name James Brown,
+				//- 				.status loream
 
-					.back.more
-						.title ГАЗПРОМ НЕФТЬ 2
-						p.
-							Lorem 2222 dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. 
-							<br>
-							Ut enim ad minim veniam, quis nostrud exercitation ullamc.
-						.person
-							.photo.rotated
-								.img
-									i(style="background-image: url(../images/clients/gray.jpg);")
-							.name James Brown,
-							.status 22222
+				//- 		.back.more
+				//- 			.title ГАЗПРОМ НЕФТЬ 2
+				//- 			p.
+				//- 				Lorem 2222 dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. 
+				//- 				<br>
+				//- 				Ut enim ad minim veniam, quis nostrud exercitation ullamc.
+				//- 			.person
+				//- 				.photo.rotated
+				//- 					.img
+				//- 						i(style="background-image: url(../images/clients/gray.jpg);")
+				//- 				.name James Brown,
+				//- 				.status 22222
 
 
 
-			.logos.right
+				//- .logos
+				//- .right
 				.item.logo8.left
 				.item.logo9
 				.item.logo10.left
@@ -232,7 +234,7 @@ block content
 				.item.logo12.left
 				.item.logo13
 				.item.logo14.left
-			.arrow.right
+			//- .arrow.right
 
 	.press.block
 		.bg31.rotated
@@ -529,39 +531,39 @@ block scripts
 		});
 
 		// анимация какрточки с отзывом клиента
-		$(function() {
+		//- $(function() {
 			
-			var i = 0;
-			var card = $('.clients.block .card')
-			var logos = $('.clients.block .logos .item').click(function(e) {
-				var item = $(e.target);
-				if (item.is('.active')) return;
-				logos.removeClass('active');
-				item.addClass('active');
+		//- 	var i = 0;
+		//- 	var card = $('.clients.block .card')
+		//- 	var logos = $('.clients.block .logos .item').click(function(e) {
+		//- 		var item = $(e.target);
+		//- 		if (item.is('.active')) return;
+		//- 		logos.removeClass('active');
+		//- 		item.addClass('active');
 					
-				var delay = card.is('.animate') ? 700 : 0;
+		//- 		var delay = card.is('.animate') ? 700 : 0;
 
-				setTimeout(function() {
-					card.addClass('animate');
-					var f = card.find('.front');
-					var b = card.find('.back');
+		//- 		setTimeout(function() {
+		//- 			card.addClass('animate');
+		//- 			var f = card.find('.front');
+		//- 			var b = card.find('.back');
 
-					// шаблонизатор?
-					b.find('.title').text('sdsd' + (i++));
-					b.find('p').text('sdsd' + (i++));
-					//- b.find('.person .photo i').css({ backgroundImage: '' });
-					//- b.find('.person .name').text('' + ',');
-					//- b.find('.person .status').text('');
+		//- 			// шаблонизатор?
+		//- 			b.find('.title').text('sdsd' + (i++));
+		//- 			b.find('p').text('sdsd' + (i++));
+		//- 			//- b.find('.person .photo i').css({ backgroundImage: '' });
+		//- 			//- b.find('.person .name').text('' + ',');
+		//- 			//- b.find('.person .status').text('');
 
 
-					setTimeout(function( ) {
-						card.removeClass('animate');
-						b.removeClass('back').addClass('front');
-						f.removeClass('front').addClass('back');
-					}, 700)
-				}, delay);
-			});
-		});
+		//- 			setTimeout(function( ) {
+		//- 				card.removeClass('animate');
+		//- 				b.removeClass('back').addClass('front');
+		//- 				f.removeClass('front').addClass('back');
+		//- 			}, 700)
+		//- 		}, delay);
+		//- 	});
+		//- });
 
 
 		
