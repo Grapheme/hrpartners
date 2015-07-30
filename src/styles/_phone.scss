@@ -216,3 +216,165 @@ body.services {
     }
   }
 }
+
+body.index {
+
+  .about.block {
+    p {
+      padding: 0 30px;
+      br {
+        display: none;
+      }
+    }
+
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 30px;
+
+      .small {
+        font-size: 20px;
+        margin-bottom: -20px;
+      }
+
+      &:after {
+        
+        bottom: 20px;
+      }
+    }
+
+    .bg2 {
+      display: none;
+    }
+  }
+
+  .team.block {
+    .partners {
+      margin-top: 30px;
+      padding: 0;
+
+      .item {
+        margin: 10px auto 0;
+
+        &.right, &.left {
+          float: none;
+        }
+
+        &.center {
+          margin-top: 10px;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .contacts.block {
+    .city {
+      .name {
+        font-size: 25px;
+      }
+    }
+
+    .bg.rotated {
+      margin-top: -110px;
+    }
+  }
+
+  .services.block {
+    .content {
+      p {
+        padding: 0 20px; 
+      }
+
+      .item {
+        display: block;
+        width: auto;
+
+        a {
+          font-size: 12px;
+        }
+      }
+
+
+      .bx-wrapper {
+        margin-top: 0;
+
+        .bx-controls {
+          .bx-next, .bx-prev {
+            top: 135px;
+          }
+        }
+      }
+    }
+  }
+
+  .clients.block {
+    .logos {
+      .item {
+        padding: 0; 
+      }
+    } 
+  }
+  
+  .press.block {
+    .row {
+      .item {
+
+      }
+
+      .item3, .item4, .item5, .item6 {
+        display: none;
+      }
+
+      margin-top: 20px; 
+
+      &.first, &.even {
+        margin: 20px auto;
+        left: 0;
+      }
+
+      &.first {
+        margin-top: 60px; 
+      }
+    }
+  }
+
+
+  .ratings.block {
+
+    .content {
+      .item {
+        width: 250px;
+        .img {
+          width: 170px;
+          height: 170px;
+          i {
+            width: 230px;
+            height: 230px;
+            $i: -30px;
+            margin-top: $i;
+            margin-left: $i;
+            background-size: 60%;
+          }
+        }
+      }
+
+
+      .bx-wrapper {
+        margin-top: 0;
+
+        .bx-controls {
+          .bx-next, .bx-prev {
+            top: 135px;
+          }
+
+          .bx-next {
+            right: 0;  
+          }
+          .bx-prev {
+            left: 0;  
+          }
+        }
+      }
+    }
+  }
+}

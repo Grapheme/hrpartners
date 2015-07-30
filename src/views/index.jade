@@ -181,8 +181,9 @@ block content
 
 	.clients.block
 		.content
-			h1 Our<br>clients
-			p Click through our Employee to learn more about our team and what motivates them.
+			.wrapper
+				h1 Our<br>clients
+				p Click through our Employee to learn more about our team and what motivates them.
 
 			//- .arrow.left
 			.logos 
@@ -452,20 +453,23 @@ block scripts
 			$(document).on('enterState', function(e, state) {
 				var rows = services.parent('.row').length;
 				var slides = services.parent('.slide').length;
-
-				if (state.id === 'desktop' && rows == 0) {
-					if (slider) {
+				if (slider) {
 						slider.destroySlider();
 						slider = null;
 					}
 					services.unwrap();
+
+				if (state.id === 'desktop' && rows == 0) {
 					wrapSlices(services, 4, '<div class="row"></div>');
 				}
 
-				if (state.id != 'desktop' && slides == 0) {
+				if (state.id != 'desktop') {
 					list.find('.item.empty').remove();
-					services.unwrap();
-					wrapSlices(services.not('.empty'), 4, '<div class="slide"></div>');
+					var itemsPerSlide
+					if (state.id === 'tablet') itemsPerSlide = 4;
+					if (state.id === 'phone') itemsPerSlide = 2;
+
+					wrapSlices(services.not('.empty'), itemsPerSlide, '<div class="slide"></div>');
 
 					slider = list.bxSlider({
 						pager: false,

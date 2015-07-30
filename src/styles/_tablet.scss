@@ -198,7 +198,11 @@ body.index {
   }
 
   .clients.block {
-    background: #0086c3 url(../images/bg2-small.jpg) no-repeat center 0;
+    background: #0086c3;
+
+    .wrapper {
+      background: #0086c3 url(../images/bg2-small.jpg) no-repeat center 0;  
+    }
 
     .content {
       h1 {
