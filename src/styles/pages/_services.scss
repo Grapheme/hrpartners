@@ -58,6 +58,10 @@ body.services {
       .page {
         float: right;
         width: 560px;
+
+        img {
+          max-width: 100%;
+        }
       }
 
       @include clearfix;

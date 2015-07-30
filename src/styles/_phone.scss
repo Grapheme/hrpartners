@@ -183,6 +183,36 @@ body.services {
   .block {
     .content {
       
+      .bx-prev, .bx-next {
+        margin-top: -60px;
+      }
+    
+      .menu {
+
+
+        .item {
+          width: 100%;
+          float: none;
+          height: auto;
+
+          a {
+            font-size: 12px;
+            padding-bottom: 0;
+          }
+
+          &:last-child {
+            a {
+              padding-top: 30px;
+              
+            }
+          }
+        }
+
+      }
+
+      .page {
+        padding: 20px;
+      }
     }
   }
 }
