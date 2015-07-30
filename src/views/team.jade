@@ -119,10 +119,13 @@ block append scripts
           items.unwrap();
         }
 
-        var itemsPerSlide;
-        if (state.id === 'desktop') itemsPerSlide = 8;
-        if (state.id === 'tablet') itemsPerSlide = 4;
-        wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
+        var itemsPerSlide = {
+          'desktop': 8,
+          'tablet': 4,
+          'phone': 2
+        };
+        
+        wrapSlices(items, itemsPerSlide[state.id], '<div class="slide"></div>');
 
         slider = managers.bxSlider({
           controls: false,

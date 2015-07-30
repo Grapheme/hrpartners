@@ -1,4 +1,6 @@
 function wrapSlices($items, itemsPerBlock, wrapperHTML) {
+  if (!itemsPerBlock) throw new Error('specify items-per-block');
+
   var items = $items.toArray();
   while (items.length) {
     var i = items.splice(0, itemsPerBlock);

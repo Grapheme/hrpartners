@@ -3,3 +3,54 @@
     min-width: 320px;
   }
 }
+
+$header-height: 40px;
+$header-font-size: 15px;
+$header-menu-width: 250px;
+@import 'mobile/header';
+
+.footer {
+  .bg {
+    .sq1, .sq3 {
+      display: none;
+    }
+  }
+
+  .content {
+    form {
+      width: auto;
+      padding: 10px;
+
+      .file {
+        button {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.block {
+  .content {
+    h1 {
+      font-size: 55px;
+
+      &:after {
+        bottom: -20px;
+        height: 2px;
+      }
+    }
+  }
+}
+
+body.about {
+  .block {
+    .content {
+      a.pdf {
+        margin: 60px auto; 
+      }
+    }
+  }
+}
