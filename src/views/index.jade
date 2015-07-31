@@ -454,12 +454,12 @@ block scripts
 				var rows = services.parent('.row').length;
 				var slides = services.parent('.slide').length;
 				if (slider) {
-						slider.destroySlider();
-						slider = null;
-					}
-					services.unwrap();
-
+					slider.destroySlider();
+					slider = null;
+				}
+				
 				if (state.id === 'desktop' && rows == 0) {
+					services.unwrap();
 					wrapSlices(services, 4, '<div class="row"></div>');
 				}
 
@@ -469,6 +469,7 @@ block scripts
 					if (state.id === 'tablet') itemsPerSlide = 4;
 					if (state.id === 'phone') itemsPerSlide = 2;
 
+					services.unwrap();
 					wrapSlices(services.not('.empty'), itemsPerSlide, '<div class="slide"></div>');
 
 					slider = list.bxSlider({

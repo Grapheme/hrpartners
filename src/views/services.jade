@@ -93,12 +93,15 @@ block scripts
 					items.unwrap();
 				}
 
-				var itemsPerSlide;
-				if (state.id === 'phone' || state.id === 'tablet') itemsPerSlide = 2;
-				if (state.id === 'tablet') itemsPerSlide = 4;
-				
-				wrapSlices(items, itemsPerSlide, '<div class="slide"></div>');
+				if (state.id == 'desktop') return;
 
+				var itemsPerSlide = {
+					'phone': 2,
+					'tablet': 4,
+				};
+
+				wrapSlices(items, itemsPerSlide[state.id], '<div class="slide"></div>');
+				
 				slider = menu.bxSlider({
 					pager: false,
 					nextText: '',
