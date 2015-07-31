@@ -17,10 +17,14 @@
 
         a(href="mailto:info@yklaw.ru") info@yklaw.ru
 
-      form
-        input(type="text" placeholder="КУДА")
-        input(type="text" placeholder="ТЕМА ПИСЬМА")
-        
+      form.feedback(novalidate)
+        .group
+          input(type="text" placeholder="КУДА" required)
+          .error-message
+        .group
+          input(type="text" placeholder="ТЕМА ПИСЬМА" required)
+          .error-message
+
         .file
           button 
             span ОБЗОР
@@ -28,8 +32,11 @@
           div ПРИКРЕПИТЬ ФАЙЛ
           input(type="file")
 
-        textarea(placeholder="СООБЩЕНИЕ")
-        input(type="submit" value="Submit")
+        .group
+          textarea(placeholder="СООБЩЕНИЕ" required)
+          .error-message
+
+        input(type="submit" value="Отправить")
 
       .copy.
         &copy; 2003&mdash;2015, Khrenov & Partners Law Office

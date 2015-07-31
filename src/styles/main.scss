@@ -392,6 +392,24 @@ a.pdf.rotated {
 
 
 
+ @keyframes shake {
+    8%, 41% {
+        transform: translateX(-10px);
+    }
+    25%, 58% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    92% {
+        transform: translateX(5px);
+    }
+    0%, 100% {
+        transform: translateX(0);
+    }
+}
+
 
 
 .footer {
@@ -437,6 +455,27 @@ a.pdf.rotated {
         margin-bottom: 12px;
       }
 
+      .group {
+        position: relative;
+
+        .error-message {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          color: #e00;
+          @include arial-bold-up(12px);
+          margin: 14px 18px;
+          // max-height: 1000px;
+          // transition: all 0.2s ease-out; 
+          // transition-property: max-height;
+        }
+      }
+
+      .invalid {
+        border: 2px solid #e00;
+        animation: shake .5s linear;
+      }
+
       input[type="text"] {
         
       }
@@ -456,6 +495,7 @@ a.pdf.rotated {
         margin: 0px 0 12px;
         @include arial-bold;
       }
+
 
       .file {
         position: relative;
