@@ -126,9 +126,7 @@ body {
       height: $side;
       width: $side;
       transform-origin: bottom right;
-      transform: rotate(-45deg);
-      border-radius: 30px;
-      
+      transform: rotate(-45deg);      
       margin-bottom: 380px + $sq-padding;
       margin-right: 310px;
       overflow: hidden;

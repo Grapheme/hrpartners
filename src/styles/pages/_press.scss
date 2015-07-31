@@ -182,11 +182,11 @@ body.press {
         float: right;
         margin: 25px 0 10px;
 
+
         span {
           display: inline-block;
           height: 20px;
           vertical-align: middle;
-          
         }
 
         .prev, .next {
@@ -230,7 +230,7 @@ body.press {
         }
 
         .next {
-          margin-left: 10px;
+          margin-left: 5px;
 
           &::after {
             border-bottom: 0;
